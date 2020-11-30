@@ -35,7 +35,7 @@ export default function Home({ greeting }) {
       </section>
       <div className="container-fluid">
         <div>
-          <h1 className="text-center p-4">{greeting} </h1>
+          <h1 className="text-center p-4">{greeting}</h1>
         </div>
         {loading ? <Spinner /> : <ItemList products={products} />}
         {/* Va a Item Detail */}{" "}

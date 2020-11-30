@@ -3,9 +3,17 @@
     height: 40px;
     margin-bottom: 50px; //sACAR DESPUES
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__buttons {
+        width: fit-content;
+
+    }
 
     &__num {
-        width: 50px;
+        width: 250px;
         height: 50px;
         display: flex;
         align-items: center;
@@ -14,27 +22,24 @@
         border: 1px solid #333;
     }
 
-    &__bottons {
-        width: fit-content;
-    }
-
     &__btn {
         text-align: center;
-        width: 25px;
+        width: 125px;
         height: 25px;
         border: .5px solid #555;
         padding: 0;
         background-color: #333;
         color: #fff;
-        font-size: .75em;
+        font-size: 1em;
 
         &--comprar {
             border: none;
-            width: 150px;
+            width: 250px;
             height: 50px;
             background-color: #999;
             color: #fff;
             font-size: 1em;
+            margin-top: 20px;
 
         }
     }

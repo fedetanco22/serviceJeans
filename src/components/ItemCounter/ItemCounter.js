@@ -26,14 +26,14 @@ export default function ItemCounter({ initialValue, maxValue, onAdd }) {
   };
 
   return (
-    <div className="d-flex align-items-center justify-content-center contador">
-      <div className=" d-flex flex-column justify-content-center contador__bottons">
-        <button className="contador__btn" onClick={addToCounter}>
-          +
-        </button>
+    <div id="ItemCounter" className="contador">
+      <div className=" contador__buttons">
         <p className="contador__num"> {contador} </p>
         <button className="contador__btn" onClick={substractCounter}>
           -
+        </button>
+        <button className="contador__btn" onClick={addToCounter}>
+          +
         </button>
       </div>
 

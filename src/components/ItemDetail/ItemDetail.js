@@ -9,9 +9,11 @@ export default function ItemDetail({ product }) {
     <div id="Detail" className="container">
       <div className="item text-center m-3 mt-5 ">
         <img className="item__img" src={product.image} alt={product.id} />
-        <div className="item__txt">
-          <p className="item__titulo">{product.name} </p>
-          <p className="item__precio">{product.price} </p>
+        <div className="item__detail">
+          <div className="item__txt">
+            <p className="item__titulo">{product.name} </p>
+            <p className="item__precio">{product.price} </p>
+          </div>
           <ItemCounter
             initialValue={1}
             maxValue={15}
