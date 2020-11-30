@@ -23,7 +23,6 @@ export default function ItemDetailContainer() {
               setProduct(item);
             }
           });
-
           setLoading(false);
         });
     }, 1500);

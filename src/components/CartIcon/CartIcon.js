@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 import "./CartIcon.scss";
 
-export default function CartIcon({ iconName, callback }) {
+export default function CartIcon({ iconName }) {
   return (
     <>
       <NavLink to="/cart/">
@@ -13,14 +13,3 @@ export default function CartIcon({ iconName, callback }) {
     </>
   );
 }
-
-// {
-
-//     icons.map(
-//         (icon, key) => <li key={
-//                 key.toString()
-//             }
-//             className="fa fa-li list-unstyled icons">
-//             {icon}</li>
-//     )
-// }

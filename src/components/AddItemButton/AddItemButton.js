@@ -1,7 +1,11 @@
-export default function AddItemButton() {
+import { Link } from "react-router-dom";
+
+export default function AddItemButton({ contador, callback }) {
   return (
-    <>
-      <button className="contador__btn--comprar">Add to cart</button>
-    </>
+    <Link to="/cart/">
+      <button className="contador__btn--comprar" onClick={callback}>
+        Comprar ({contador})
+      </button>
+    </Link>
   );
 }
