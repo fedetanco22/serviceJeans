@@ -25,7 +25,7 @@ export default function Home({ greeting }) {
           setProducts(result);
           setLoading(false); // aca recibimos los resultados por eso sacamos el loading
         });
-    }, 3000);
+    }, 1000);
   }, []);
 
   return (

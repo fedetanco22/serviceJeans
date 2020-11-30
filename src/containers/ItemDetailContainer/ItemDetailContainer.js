@@ -26,7 +26,7 @@ export default function ItemDetailContainer() {
 
           setLoading(false);
         });
-    }, 3000);
+    }, 1500);
   }, [id]);
 
   return (

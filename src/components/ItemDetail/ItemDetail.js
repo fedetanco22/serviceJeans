@@ -2,11 +2,9 @@ import ItemCounter from "../ItemCounter/ItemCounter";
 import "./ItemDetail.scss";
 
 export default function ItemDetail({ product }) {
-  console.log(product);
   const addToCart = (value) => {
     alert(`Se agregaron ${value} productos a su Carrito `);
   };
-
   return (
     <div id="Detail" className="container">
       <div className="item text-center m-3 mt-5 ">

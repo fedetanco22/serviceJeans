@@ -5,10 +5,6 @@ import { Link } from "react-router-dom";
 import "./NavBar.scss";
 
 export default function NavBar() {
-  const handleClick = (e) => {
-    alert(e.target.outerHTML);
-  };
-
   return (
     <div
       id="Navbar"
@@ -19,7 +15,7 @@ export default function NavBar() {
         </Link>
         {/* <CartIcon iconName="user" callback={handleClick}></CartIcon>
         <CartIcon iconName="search" callback={handleClick}></CartIcon> */}
-        <CartIcon iconName="shopping-bag" callback={handleClick}></CartIcon>
+        <CartIcon iconName="shopping-bag"></CartIcon>
         {/* </Navbar.Collapse> */}{" "}
       </nav>
     </div>
