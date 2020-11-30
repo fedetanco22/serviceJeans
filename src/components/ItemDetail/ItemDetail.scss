@@ -1,0 +1,24 @@
+.item {
+    display: flex;
+    align-items: center;
+
+    &__img {
+        width: 30vw;
+        padding: 10px;
+    }
+
+    &__titulo {
+        font-size: 50px;
+        font-weight: 900;
+    }
+
+    &__precio {
+        padding: 5px;
+        font-size: 25px;
+        font-weight: 600;
+
+        &::before {
+            content: "$";
+        }
+    }
+}

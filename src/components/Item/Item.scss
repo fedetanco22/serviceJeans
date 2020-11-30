@@ -1,0 +1,18 @@
+.listItem {
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+
+
+    &__img {
+        width: 250px;
+        height: auto;
+    }
+
+
+
+    &__titulo {
+        margin-bottom: 2px;
+    }
+}

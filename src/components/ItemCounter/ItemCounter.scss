@@ -1,0 +1,41 @@
+.contador {
+    width: fit-content;
+    height: 40px;
+    margin-bottom: 50px; //sACAR DESPUES
+    text-align: center;
+
+    &__num {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        border: 1px solid #333;
+    }
+
+    &__bottons {
+        width: fit-content;
+    }
+
+    &__btn {
+        text-align: center;
+        width: 25px;
+        height: 25px;
+        border: .5px solid #555;
+        padding: 0;
+        background-color: #333;
+        color: #fff;
+        font-size: .75em;
+
+        &--comprar {
+            border: none;
+            width: 150px;
+            height: 50px;
+            background-color: #999;
+            color: #fff;
+            font-size: 1em;
+
+        }
+    }
+}
