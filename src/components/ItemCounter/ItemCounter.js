@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./ItemCounter.scss";
-import AddItemButton from "../AddItemButton/AddItemButton";
+import Button from "../Button/Button";
 
 export default function ItemCounter({ initialValue, maxValue, onAdd }) {
   const [contador, setContador] = useState(initialValue);
@@ -36,10 +36,11 @@ export default function ItemCounter({ initialValue, maxValue, onAdd }) {
           +
         </button>
       </div>
-
-      <AddItemButton
-        onClick={handleAddToCart}
-        contador={contador}></AddItemButton>
+      <Button
+        callback={handleAddToCart}
+        content={`Añadir al carrito (${contador})`}
+        path="/cart"
+      />
     </div>
   );
 }

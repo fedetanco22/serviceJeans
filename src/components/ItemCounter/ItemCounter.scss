@@ -9,7 +9,6 @@
 
     &__buttons {
         width: fit-content;
-
     }
 
     &__num {
@@ -22,25 +21,5 @@
         border: 1px solid #333;
     }
 
-    &__btn {
-        text-align: center;
-        width: 125px;
-        height: 25px;
-        border: .5px solid #555;
-        padding: 0;
-        background-color: #333;
-        color: #fff;
-        font-size: 1em;
 
-        &--comprar {
-            border: none;
-            width: 250px;
-            height: 50px;
-            background-color: #999;
-            color: #fff;
-            font-size: 1em;
-            margin-top: 20px;
-
-        }
-    }
 }

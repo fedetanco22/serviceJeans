@@ -1,10 +1,14 @@
+import { useState } from "react";
 import ItemCounter from "../ItemCounter/ItemCounter";
 import "./ItemDetail.scss";
 
 export default function ItemDetail({ product }) {
+  const [value, setValue] = useState(1);
+
   const addToCart = (value) => {
-    alert(`Se agregaron ${value} productos a su Carrito `);
+    setValue(value);
   };
+
   return (
     <div id="Detail" className="container">
       <div className="item text-center m-3 mt-5 ">
@@ -15,7 +19,7 @@ export default function ItemDetail({ product }) {
             <p className="item__precio">{product.price} </p>
           </div>
           <ItemCounter
-            initialValue={1}
+            initialValue={value}
             maxValue={15}
             onAdd={addToCart}></ItemCounter>
         </div>
