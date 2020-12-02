@@ -3,8 +3,30 @@
     align-items: center;
     justify-content: space-between;
     height: 100px;
+
+    &__list {
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    &__items {
+        color: #666;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: 400;
+        margin: 0 25px;
+        text-transform: uppercase;
+        border: none;
+        background-color: #fff;
+
+        &:hover {
+            color: red;
+        }
+    }
 }
 
 .logo {
-    width: 100px;
+    width: 150px;
 }
