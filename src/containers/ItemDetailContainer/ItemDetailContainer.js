@@ -13,7 +13,7 @@ export default function ItemDetailContainer() {
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
-      getProdSolo()
+      getProdSolo(id)
         .then((result) => {
           return JSON.parse(result);
         })

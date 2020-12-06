@@ -1,24 +1,35 @@
-//  .btn {
-//      text-align: center;
-//      width: 125px;
-//      height: 25px;
-//      border: .5px solid #555;
-//      padding: 0;
-//      background-color: #333;
-//      color: #fff;
-//      font-size: 1em;
-
-//      &--comprar {
-//          border: none;
-//          width: 250px;
-//          height: 50px;
-//          background-color: #999;
-//          color: #fff;
-//          font-size: 1em;
-//          margin-top: 20px;
-
-//      }
-//  }
 #Button:focus {
     outline: none
+}
+
+.button {
+    &__counter {
+        text-align: center;
+        width: 125px;
+        height: 25px;
+        border: .5px solid #555;
+        padding: 0;
+        background-color: #333;
+        color: #fff;
+        font-size: 1em;
+
+        &:focus {
+            outline: none
+        }
+    }
+
+    &__agregar {
+        border: none;
+        width: 250px;
+        height: 50px;
+        background-color: #999;
+        color: #fff;
+        font-size: 1em;
+        margin-top: 20px;
+
+        &:focus {
+            outline: none
+        }
+
+    }
 }

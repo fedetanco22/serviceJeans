@@ -1,29 +1,34 @@
 import NavBar from "./components/NavBar/NavBar"; // SACARLO Y HACER MI NAVBAR
 import Home from "./containers/Home/Home";
 import ItemDetailContainer from "./containers/ItemDetailContainer/ItemDetailContainer";
-import Checkout from "./containers/CheckOut/CheckOut";
+import Cart from "./containers/Cart/Cart";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { AppProvider } from "./context/useAppContext";
 
 import "./App.scss";
 
 function App() {
   return (
-    <BrowserRouter>
-      <NavBar />
-      <Switch>
-        <Route exact path="/">
-          <Home greeting="My React App for Service Jeans!" />
-        </Route>
-        {/* Item Detail */}
-        <Route exact path="/item/:id">
-          <ItemDetailContainer />
-        </Route>
-        {/* CheckOut */}
-        <Route exact path="/cart">
-          <Checkout />
-        </Route>
-      </Switch>
-    </BrowserRouter>
+    <div className="App">
+      <AppProvider>
+        <BrowserRouter>
+          <NavBar />
+          <Switch>
+            <Route exact path="/">
+              <Home greeting="My React App for Service Jeans!" />
+            </Route>
+            {/* Item Detail */}
+            <Route exact path="/item/:id">
+              <ItemDetailContainer />
+            </Route>
+            {/* CheckOut */}
+            <Route exact path="/cart">
+              <Cart />
+            </Route>
+          </Switch>
+        </BrowserRouter>
+      </AppProvider>
+    </div>
   );
 }
 

@@ -1,12 +1,22 @@
 import { useState } from "react";
 import ItemCounter from "../ItemCounter/ItemCounter";
 import "./ItemDetail.scss";
+// import Button from "../Button/Button";
+import useAppContext from "../../context/useAppContext";
 
 export default function ItemDetail({ product }) {
-  const [value, setValue] = useState(1);
+  const [quantity, setQuantity] = useState(1);
 
-  const addToCart = (value) => {
-    setValue(value);
+  const { addProduct } = useAppContext();
+
+  const handleCounter = (contador) => {
+    setQuantity(contador);
+  };
+
+  const addToCart = () => {
+    addProduct(product, quantity);
+    console.log(product);
+    // alert(`Se agrego ${value} items a tu carrito.`);
   };
 
   return (
@@ -19,9 +29,18 @@ export default function ItemDetail({ product }) {
             <p className="item__precio">{product.price} </p>
           </div>
           <ItemCounter
-            initialValue={value}
+            initialValue={1}
             maxValue={15}
-            onAdd={addToCart}></ItemCounter>
+            onAdd={handleCounter}></ItemCounter>
+          <button className="button__agregar" onClick={addToCart}>
+            Añadir al carrito ({quantity})
+          </button>
+          {/* <Button
+            classsName={"button__agregar"}
+            path={"/cart/"}
+            callback={addToCart}
+            content={"Comprar"}
+          /> */}
         </div>
       </div>
     </div>

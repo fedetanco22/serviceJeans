@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Button.scss";
 
 export default function Button({ path, content, callback, className }) {
   return (
-    <Link to={path}>
+    <NavLink to={path}>
       {content.startsWith("http") || content.startsWith("/static/") ? (
         <img src={content} alt={`${content}`} className={className} />
       ) : (
@@ -11,6 +11,6 @@ export default function Button({ path, content, callback, className }) {
           {content}
         </button>
       )}
-    </Link>
+    </NavLink>
   );
 }
