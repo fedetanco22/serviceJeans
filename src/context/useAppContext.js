@@ -5,20 +5,28 @@ const useAppContext = () => useContext(AppContext); //Custum Hook para solo impo
 
 export const AppProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
+  // const [quantity, setQuantity] = useState(0);
 
+  // Add Prodcut to Cart
   const addProduct = (product, quantity) => {
     const existingProduct = products.find((prod) => prod.id === product.id);
 
     if (existingProduct) {
-      product.quantity = +quantity;
+      product.quantity += quantity;
       setProducts([...products]);
     } else {
       setProducts([...products, { ...product, quantity }]);
+      console.log(products);
     }
   };
 
+  //Total Quantity in Cart
+  const productsQuantity = () => {
+    return products.reduce((acc, product) => (acc += product.quantity), 0);
+  };
+
   return (
-    <AppContext.Provider value={{ products, addProduct }}>
+    <AppContext.Provider value={{ products, addProduct, productsQuantity }}>
       {children}
     </AppContext.Provider>
   );

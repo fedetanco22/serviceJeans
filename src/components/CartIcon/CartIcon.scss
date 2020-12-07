@@ -1,9 +1,19 @@
 .icons {
+    position: relative;
     color: #666;
     cursor: pointer;
     font-size: 20px;
     margin: 0 10px;
 
+    &__number {
+        position: absolute;
+        background-color: pink;
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        text-align: center;
+        font-size: 15px;
+    }
 }
 
 // .fa-ul {
