@@ -16,7 +16,6 @@ export const AppProvider = ({ children }) => {
       setProducts([...products]);
     } else {
       setProducts([...products, { ...product, quantity }]);
-      console.log(products);
     }
   };
 

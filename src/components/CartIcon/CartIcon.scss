@@ -9,10 +9,17 @@
         position: absolute;
         background-color: pink;
         border-radius: 50%;
-        width: 15px;
-        height: 15px;
+        width: 19px;
+        height: 19px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translate(10px, -25px);
         text-align: center;
-        font-size: 15px;
+
+        &__txt {
+            font-size: 10px;
+        }
     }
 }
 

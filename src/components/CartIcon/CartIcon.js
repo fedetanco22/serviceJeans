@@ -11,7 +11,9 @@ export default function CartIcon({ iconName, path }) {
         {iconName === "shopping-bag" ? (
           <>
             <i className={`fas fa-${iconName} icons`}>
-              <span className="icons__number">{productsQuantity()}</span>
+              <div className="icons__number">
+                <span>{productsQuantity()}</span>
+              </div>
             </i>
           </>
         ) : (
