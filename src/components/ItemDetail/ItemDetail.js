@@ -15,7 +15,7 @@ export default function ItemDetail({ product }) {
 
   const addToCart = () => {
     addProduct(product, quantity);
-    alert(`Se agrego ${quantity} items a tu carrito.`);
+    // alert(`Se agrego ${quantity} items a tu carrito.`);
   };
 
   return (

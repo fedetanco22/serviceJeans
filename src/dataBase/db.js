@@ -33,25 +33,25 @@ const products = ` [{
   "name": "Vodka - Smirnoff",
   "price": 1473,
   "stock": 39,
-  "image": "http://dummyimage.com/249x197.png/5fa2dd/ffffff"
+  "image": "https://d26lpennugtm8s.cloudfront.net/stores/857/432/products/pic_20201117_160740-0fd996279d08f5afa116056400872244-240-0.jpg"
 }, {
   "id": 6,
   "name": "Chocolate Bar - Reese Pieces",
   "price": 1161,
   "stock": 5,
-  "image": "http://dummyimage.com/161x250.png/dddddd/000000"
+  "image": "https://d26lpennugtm8s.cloudfront.net/stores/857/432/products/img_78921-bf6bcfb776ee9f8af216009740469901-240-0.jpg"
 }, {
   "id": 7,
   "name": "Chicken - Base",
   "price": 1405,
   "stock": 62,
-  "image": "http://dummyimage.com/204x218.jpg/5fa2dd/ffffff"
+  "image": "https://d26lpennugtm8s.cloudfront.net/stores/857/432/products/chl_13131-71aa4d999390287f0c15381517353009-240-0.jpg"
 }, {
   "id": 8,
   "name": "Longos - Chicken Caeser Salad",
   "price": 1310,
   "stock": 29,
-  "image": "http://dummyimage.com/172x243.jpg/ff4444/ffffff"
+  "image": "https://d26lpennugtm8s.cloudfront.net/stores/857/432/products/img_11932-1eebaa3a12ffb5480116032004515775-240-0.jpg"
 }, {
   "id": 9,
   "name": "Wine - Domaine Boyar Royal",

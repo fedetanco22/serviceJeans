@@ -33,7 +33,7 @@ export default function Home({ greeting }) {
       <section className="banner">
         <img src={foto} alt="foto1" className="w-100" />
       </section>
-      <div className="container-fluid">
+      <div className="container">
         <div>
           <h1 className="text-center p-4">{greeting}</h1>
         </div>

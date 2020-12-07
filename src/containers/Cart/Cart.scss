@@ -3,3 +3,63 @@
     font-weight: 900;
     text-align: center;
 }
+
+.cart__vacio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(50%);
+}
+
+.cart {
+    text-align: center;
+
+    &__cart {
+        font-size: 40px;
+        font-weight: 400;
+        text-align: center;
+    }
+
+
+    &__detail {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 100px;
+        grid-template-areas:
+            "img titulo cantidad precio";
+        margin: 10px 0;
+
+    }
+
+    &__img {
+        grid-area: img;
+        height: 100%;
+
+
+        &-imagen {
+            height: 100%;
+        }
+    }
+
+    &__items {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__item {
+        grid-area: titulo;
+    }
+
+    &__cantidad {
+        grid-area: cantidad;
+    }
+
+    &__precio {
+        grid-area: precio;
+
+        &::before {
+            content: "$"
+        }
+    }
+}

@@ -9,17 +9,14 @@
         position: absolute;
         background-color: pink;
         border-radius: 50%;
-        width: 19px;
-        height: 19px;
+        width: 18px;
+        height: 18px;
         display: flex;
         justify-content: center;
         align-items: center;
-        transform: translate(10px, -25px);
-        text-align: center;
+        transform: translate(15px, -25px);
+        font-size: 15px;
 
-        &__txt {
-            font-size: 10px;
-        }
     }
 }
 
