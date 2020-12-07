@@ -3,11 +3,11 @@ import "./Cart.scss";
 
 export default function Cart() {
   const { products } = useAppContext();
-  console.log(products);
+
   return (
     <div id="Cart">
       {products.length === 0 ? (
-        <h3>El carrito de compras está vacío</h3>
+        <h3 className="titulo">El carrito de compras está vacío</h3>
       ) : (
         products.map((product, idx) => (
           <div key={idx} className="container">
@@ -16,7 +16,7 @@ export default function Cart() {
             <img
               src={product.image}
               alt={`img-${product.id}`}
-              className="w-2"
+              className="img"
             />
           </div>
         ))

@@ -21,7 +21,11 @@ export default function ItemDetail({ product }) {
   return (
     <div id="Detail" className="container">
       <div className="item text-center m-3 mt-5 ">
-        <img className="item__img" src={product.image} alt={product.id} />
+        <img
+          className="item__img"
+          src={product.image}
+          alt={`img-${product.id}`}
+        />
         <div className="item__detail">
           <div className="item__txt">
             <p className="item__titulo">{product.name} </p>
