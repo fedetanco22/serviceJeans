@@ -12,7 +12,7 @@ export const AppProvider = ({ children }) => {
     const existingProduct = products.find((prod) => prod.id === product.id);
 
     if (existingProduct) {
-      product.quantity += quantity;
+      existingProduct.quantity += quantity;
       setProducts([...products]);
     } else {
       setProducts([...products, { ...product, quantity }]);
