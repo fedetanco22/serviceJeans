@@ -15,6 +15,7 @@ export const getFirebase = () => {
   return app;
 };
 
-export const getFirebase = () => {
+//Para llamar a la base de datos
+export const getFirestore = () => {
   return firebase.firestore();
 };
