@@ -27,7 +27,7 @@ function App() {
               <CategoriesContainer />
             </Route>
             {/* CheckOut */}
-            <Route exact path="/cart">
+            <Route exact path="/cart/">
               <Cart />
             </Route>
           </Switch>

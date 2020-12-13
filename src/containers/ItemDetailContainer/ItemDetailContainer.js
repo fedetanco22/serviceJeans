@@ -8,6 +8,7 @@ import Spinner from "../../components/Spinner/Spinner";
 export default function ItemDetailContainer() {
   const [loading, setLoading] = useState(true);
   const [product, setProduct] = useState({});
+
   const { id } = useParams();
 
   useEffect(() => {
@@ -18,12 +19,12 @@ export default function ItemDetailContainer() {
       const itemId = itemCollection.doc(id);
       // Pedimos los datos
       itemId.get().then((response) => {
-        const item = response.data();
+        const item = { ...response.data(), id: id };
         setProduct(item);
       });
       setLoading(false);
     }, 2000);
-  });
+  }, [id]);
 
   return (
     <div id="Item">

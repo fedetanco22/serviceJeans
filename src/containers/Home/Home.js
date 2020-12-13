@@ -10,6 +10,7 @@ import "./Home.scss";
 export default function Home({ greeting }) {
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
+
   // Traer Array de Productos
   useEffect(() => {
     setTimeout(() => {
@@ -23,6 +24,7 @@ export default function Home({ greeting }) {
             ...doc.data(),
             id: doc.id,
           }));
+
           setProducts(data);
         }
         // Guardamos en un state

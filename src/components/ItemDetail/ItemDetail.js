@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 import ItemCounter from "../ItemCounter/ItemCounter";
 import "./ItemDetail.scss";
 // import Button from "../Button/Button";
@@ -28,7 +29,7 @@ export default function ItemDetail({ product }) {
         />
         <div className="item__detail">
           <div className="item__txt">
-            <p className="item__titulo">{product.name} </p>
+            <p className="item__titulo">{product.title} </p>
             <p className="item__precio">{product.price} </p>
           </div>
           <ItemCounter
