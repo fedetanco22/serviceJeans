@@ -1,23 +1,24 @@
 .icons {
-    position: relative;
     color: #666;
     cursor: pointer;
     font-size: 20px;
     margin: 0 10px;
 
     &__number {
-        position: absolute;
-        background-color: pink;
-        border-radius: 50%;
-        width: 18px;
-        height: 18px;
+        color: #777;
         display: flex;
-        justify-content: center;
         align-items: center;
-        transform: translate(15px, -25px);
+        justify-content: center;
         font-size: 15px;
+        font-weight: 600;
 
     }
+}
+
+.shopCart {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 // .fa-ul {

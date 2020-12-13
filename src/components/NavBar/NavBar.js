@@ -5,7 +5,12 @@ import Button from "../Button/Button";
 import "./NavBar.scss";
 // import { NavLink } from "react-router-dom";
 
-const linkMenu = ["productos", "colecciones", "categorías", "venta mayorista"];
+const linkMenu = [
+  { link: "productos", path: "/" },
+  { link: "colecciones", path: "/" },
+  { link: "categorías", path: "/categories/" },
+  { link: "venta mayorista", path: "/" },
+];
 
 export default function NavBar() {
   return (
@@ -15,10 +20,10 @@ export default function NavBar() {
       <nav className="container menu">
         <Button path="/" content={logo} className="logo" />
         <ul className="menu__list">
-          {linkMenu.map((link, key) => {
+          {linkMenu.map(({ link, path }, key) => {
             return (
               <Button
-                path="/"
+                path={path}
                 content={link}
                 key={key}
                 className="menu__items"

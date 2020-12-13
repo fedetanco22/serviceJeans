@@ -1,23 +1,10 @@
-import { createContext, useContext, useState, useEffect } from "react";
-import { getFirestore } from "../firebase";
+import { createContext, useContext, useState } from "react";
 
 const AppContext = createContext();
 const useAppContext = () => useContext(AppContext); //Custum Hook para solo importar useAppContext y AppProvider
 
 export const AppProvider = ({ children }) => {
-  const [data, setData] = useState();
   const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    const db = getFirestore();
-    const itemCollection = db.collection("productos");
-    itemCollection.get().then((response) => {
-      const data = response.docs.map((element) => {
-        return element.data();
-      });
-      setData(data);
-    });
-  }, []);
 
   // Add Product to Cart
   const addProduct = (product, quantity) => {
@@ -37,8 +24,7 @@ export const AppProvider = ({ children }) => {
   };
 
   return (
-    <AppContext.Provider
-      value={{ data, products, addProduct, productsQuantity }}>
+    <AppContext.Provider value={{ products, addProduct, productsQuantity }}>
       {children}
     </AppContext.Provider>
   );

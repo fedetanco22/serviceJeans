@@ -9,13 +9,12 @@ export default function CartIcon({ iconName, path }) {
     <>
       <NavLink to={path}>
         {iconName === "shopping-bag" ? (
-          <>
-            <i className={`fas fa-${iconName} icons`}>
-              <div className="icons__number">
-                <span>{productsQuantity()}</span>
-              </div>
-            </i>
-          </>
+          <div className="shopCart">
+            <i className={`fas fa-${iconName} icons`}></i>
+            <div className="icons__number">
+              <span>{productsQuantity()}</span>
+            </div>
+          </div>
         ) : (
           <i className={`fas fa-${iconName} icons`}></i>
         )}

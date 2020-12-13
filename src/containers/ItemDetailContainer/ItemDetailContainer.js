@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import getProdSolo from "../../dataBase/db";
+import { getFirestore } from "../../firebase";
 
 import ItemDetail from "../../components/ItemDetail/ItemDetail";
 import Spinner from "../../components/Spinner/Spinner";
@@ -11,22 +11,19 @@ export default function ItemDetailContainer() {
   const { id } = useParams();
 
   useEffect(() => {
-    setLoading(true);
     setTimeout(() => {
-      getProdSolo(id)
-        .then((result) => {
-          return JSON.parse(result);
-        })
-        .then((result) => {
-          result.forEach((item) => {
-            if (item.id === Number(id)) {
-              setProduct(item);
-            }
-          });
-          setLoading(false);
-        });
-    }, 1500);
-  }, [id]);
+      // Referencia
+      const db = getFirestore();
+      const itemCollection = db.collection("productos");
+      const itemId = itemCollection.doc(id);
+      // Pedimos los datos
+      itemId.get().then((response) => {
+        const item = response.data();
+        setProduct(item);
+      });
+      setLoading(false);
+    }, 2000);
+  });
 
   return (
     <div id="Item">
