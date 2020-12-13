@@ -16,7 +16,7 @@ function App() {
           <NavBar />
           <Switch>
             <Route exact path="/">
-              <Home greeting="My React App for Service Jeans!" />
+              <Home greeting="Últimos ingresos de Service Jeans!" />
             </Route>
             {/* Item Detail */}
             <Route exact path="/item/:id">

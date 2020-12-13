@@ -1,9 +1,16 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Item.scss";
 import useAppContext from "../../context/useAppContext";
 
 export default function Item({ item }) {
+  const [quantity, setQuantity] = useState(1);
   const { addProduct } = useAppContext();
+
+  const addItem = () => {
+    addProduct(item, quantity);
+  };
+
   return (
     <div id="Item" className="listItem">
       <NavLink to={`/item/${item.id}`}>
@@ -15,7 +22,7 @@ export default function Item({ item }) {
         <p className="listItem__titulo">{item.title}</p>
         <p className="listItem__precio">$ {item.price}</p>
       </NavLink>
-      <i className="plusIcon fas fa-plus-circle" onClick={() => {}}></i>
+      <i className="plusIcon fas fa-plus-circle" onClick={addItem}></i>
     </div>
   );
 }

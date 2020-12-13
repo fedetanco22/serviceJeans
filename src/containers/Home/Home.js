@@ -16,7 +16,7 @@ export default function Home({ greeting }) {
     setTimeout(() => {
       // Referencia
       const db = getFirestore();
-      const itemCollection = db.collection("productos");
+      const itemCollection = db.collection("productos").limit(8);
       // Pedimos los datos
       itemCollection.get().then((response) => {
         if (response.size) {
