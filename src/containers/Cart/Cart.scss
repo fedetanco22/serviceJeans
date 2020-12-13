@@ -35,7 +35,7 @@
 
 
         &-imagen {
-            width: 100%;
+            width: 30%;
             object-fit: cover;
             display: block;
         }
@@ -45,6 +45,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        text-transform: capitalize;
     }
 
     &__item {

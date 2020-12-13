@@ -26,7 +26,7 @@ export default function NavBar() {
                 path={path}
                 content={link}
                 key={key}
-                className="menu__items"
+                className="menu__items hvr-underline-from-center"
               />
             );
           })}
