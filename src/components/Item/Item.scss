@@ -4,20 +4,24 @@
     display: flex;
     flex-direction: column;
 
-
     &__img {
         width: 250px;
         height: auto;
     }
 
+    &__descrip {
+
+        &__titulo {
+            margin-bottom: 2px;
+        }
 
 
-    &__titulo {
-        margin-bottom: 2px;
+        &__plusIcon {
+            display: inline-block;
+            font-size: 25px;
+            color: #777;
+            transform: translate(210px, -50px);
+            cursor: pointer;
+        }
     }
-}
-
-.plusIcon {
-    font-size: 25px;
-    color: #777;
 }

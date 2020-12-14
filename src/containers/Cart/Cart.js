@@ -5,10 +5,7 @@ import "../../components/Button/Button.scss";
 
 export default function Cart() {
   const { products } = useAppContext();
-  console.log(
-    "🚀 ~ file: useAppContext.js ~ line 17 ~ addProduct ~ products",
-    products
-  );
+
   return (
     <div id="Cart">
       <h1 className="cart__cart">Carrito</h1>

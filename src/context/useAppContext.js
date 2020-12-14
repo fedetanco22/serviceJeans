@@ -16,6 +16,12 @@ export const AppProvider = ({ children }) => {
     } else {
       setProducts([...products, { ...product, quantity }]);
     }
+
+    swal(
+      "Excelente!",
+      `Agregaste ${quantity} ${product.title} al carrito de compras!`,
+      "success"
+    );
   };
 
   //Total Quantity in Cart

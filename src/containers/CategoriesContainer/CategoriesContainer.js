@@ -1,6 +1,6 @@
-// import { useState, useEffect } from "react";
-// import { useParams } from "react-router-dom";
-// import { getFirestore } from "../../firebase";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import getProductsbyCategory from "../../backend/categories";
 
 import CategoryList from "../../components/CategoryList/CategoryList";
 
@@ -8,25 +8,18 @@ import CategoryList from "../../components/CategoryList/CategoryList";
 import "./CategoriesContainer.scss";
 
 export default function CategoriesContainer() {
-  // Traer Array de Productos
-  // useEffect(() => {
-  //   // setTimeout(() => {
+  const { categoryId } = useParams();
 
-  //   //   //     // Referencia
-  //   //   //     const db = getFirestore();
-  //   //   //     const itemCollection = db.collection("productos");
-  //   //   //     const categorie = itemCollection.where("categoryId", "==", categoryId);
-  //   //   //     // Pedimos los datos
-  //   //   //     categorie.get().then((response) => {
-  //   //   //       const categ = response.docs.map((docum) => {
-  //   //   //         return docum.data();
-  //   //   //       });
-  //   //   //       // Guardamos en un state
-  //   //   //       setCategory(categ);
-  //   //   // setLoading(false);
-  //   //   //     });
-  //   // }, 2000);
-  // }, []);
+  useEffect(() => {
+    setTimeout(() => {
+      getProductsbyCategory(categoryId).then((result) => {
+        console.log(result, "holaaaa");
+        /* setProducts(result);
+        setLoading(false); */
+        // aca recibimos los resultados por eso sacamos el loading
+      });
+    }, 1000);
+  }, []);
 
   return (
     <>

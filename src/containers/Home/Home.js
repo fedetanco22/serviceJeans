@@ -1,11 +1,12 @@
 // import {useState, useEffect} from 'react';
 import { useState, useEffect } from "react";
-import { getFirestore } from "../../firebase";
+// import { getFirestore } from "../../firebase";
 import ItemList from "../../components/ItemList/ItemList";
 
 import Spinner from "../../components/Spinner/Spinner";
 import foto from "../../assets/images/3.png";
 import "./Home.scss";
+import getProducts from "../../backend/products";
 
 export default function Home({ greeting }) {
   const [loading, setLoading] = useState(true);
@@ -14,23 +15,11 @@ export default function Home({ greeting }) {
   // Traer Array de Productos
   useEffect(() => {
     setTimeout(() => {
-      // Referencia
-      const db = getFirestore();
-      const itemCollection = db.collection("productos").limit(8);
-      // Pedimos los datos
-      itemCollection.get().then((response) => {
-        if (response.size) {
-          const data = response.docs.map((doc) => ({
-            ...doc.data(),
-            id: doc.id,
-          }));
-
-          setProducts(data);
-        }
-        // Guardamos en un state
-        setLoading(false);
+      getProducts().then((result) => {
+        setProducts(result);
+        setLoading(false); // aca recibimos los resultados por eso sacamos el loading
       });
-    }, 2000);
+    }, 1000);
   }, []);
 
   return (

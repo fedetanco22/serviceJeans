@@ -4,7 +4,7 @@ import "./Item.scss";
 import useAppContext from "../../context/useAppContext";
 
 export default function Item({ item }) {
-  const [quantity, setQuantity] = useState(1);
+  const [quantity] = useState(1);
   const { addProduct } = useAppContext();
 
   const addItem = () => {
@@ -13,16 +13,20 @@ export default function Item({ item }) {
 
   return (
     <div id="Item" className="listItem">
-      <NavLink to={`/item/${item.id}`}>
+      <NavLink to={`/item/${item.id}`} className="listItem__link">
         <img
           src={item.image}
           alt={`img-${item.id}`}
           className="listItem__img"
         />
-        <p className="listItem__titulo">{item.title}</p>
-        <p className="listItem__precio">$ {item.price}</p>
+        <div className="listItem__descrip">
+          <p className="listItem__descrip__titulo">{item.title}</p>
+          <p className="listItem__descrip__precio">$ {item.price}</p>
+        </div>
       </NavLink>
-      <i className="plusIcon fas fa-plus-circle" onClick={addItem}></i>
+      <i
+        className="listItem__descrip__plusIcon fas fa-plus-circle"
+        onClick={addItem}></i>
     </div>
   );
 }

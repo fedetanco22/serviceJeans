@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getFirestore } from "../../firebase";
+import getProductById from "../../backend/item";
 
 import ItemDetail from "../../components/ItemDetail/ItemDetail";
 import Spinner from "../../components/Spinner/Spinner";
@@ -13,17 +13,11 @@ export default function ItemDetailContainer() {
 
   useEffect(() => {
     setTimeout(() => {
-      // Referencia
-      const db = getFirestore();
-      const itemCollection = db.collection("productos");
-      const itemId = itemCollection.doc(id);
-      // Pedimos los datos
-      itemId.get().then((response) => {
-        const item = { ...response.data(), id: id };
-        setProduct(item);
+      getProductById(id).then((result) => {
+        setProduct(result);
+        setLoading(false); // aca recibimos los resultados por eso sacamos el loading
       });
-      setLoading(false);
-    }, 2000);
+    }, 1000);
   }, [id]);
 
   return (
