@@ -1,29 +1,29 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import getProductsbyCategory from "../../backend/categories";
-
+import getCategory from "../../backend/categories";
 import CategoryList from "../../components/CategoryList/CategoryList";
 
-// import Spinner from "../../components/Spinner/Spinner";
+import Spinner from "../../components/Spinner/Spinner";
 import "./CategoriesContainer.scss";
 
 export default function CategoriesContainer() {
-  const { categoryId } = useParams();
+  const [loading, setLoading] = useState(true);
+  const [category, setCategory] = useState([]);
+
+  // const { categoryId } = useParams();
 
   useEffect(() => {
     setTimeout(() => {
-      getProductsbyCategory(categoryId).then((result) => {
-        console.log(result, "holaaaa");
-        /* setProducts(result);
-        setLoading(false); */
+      getCategory().then((result) => {
+        setCategory(result);
+        setLoading(false);
         // aca recibimos los resultados por eso sacamos el loading
       });
     }, 1000);
   }, []);
 
   return (
-    <>
-      <CategoryList />
-    </>
+    <div id="CategoryContainer">
+      {loading ? <Spinner /> : <CategoryList categories={category} />}
+    </div>
   );
 }

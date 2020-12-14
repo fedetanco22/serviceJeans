@@ -1,0 +1,36 @@
+.listCategory {
+    width: 500px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+
+
+    &__img {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+
+    }
+
+    &__button {
+        transform: translate(-50%, -500%);
+        position: absolute;
+        border: none;
+        width: 150px;
+        height: 50px;
+        background-color: pink;
+        color: #fff;
+        font-size: 1em;
+        z-index: 2;
+
+        &:focus {
+            outline: none
+        }
+    }
+}
