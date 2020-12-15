@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import getProductById from "../../backend/item";
-
 import ItemDetail from "../../components/ItemDetail/ItemDetail";
 import Spinner from "../../components/Spinner/Spinner";
+import getProductById from "../../backend/item";
 
 export default function ItemDetailContainer() {
   const [loading, setLoading] = useState(true);

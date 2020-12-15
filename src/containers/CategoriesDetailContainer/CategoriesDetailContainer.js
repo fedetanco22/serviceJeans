@@ -2,6 +2,7 @@ import CategoryDetail from "../../components/CategoryDetail/CategoryDetail";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import getProductsByCategory from "../../backend/itemCategory";
+import Spinner from "../../components/Spinner/Spinner";
 
 export default function CategoriesDetailContainer() {
   const [loading, setLoading] = useState(true);
@@ -12,14 +13,19 @@ export default function CategoriesDetailContainer() {
   useEffect(() => {
     setTimeout(() => {
       getProductsByCategory(categoryId).then((result) => {
-        console.log(result, "hola");
+        setProducts(result);
+        setLoading(false);
       });
     }, 2000);
-  }, []);
+  }, [categoryId]);
 
   return (
     <>
-      <CategoryDetail />
+      {loading ? (
+        <Spinner />
+      ) : (
+        <CategoryDetail products={products} category={categoryId} />
+      )}
     </>
   );
 }
