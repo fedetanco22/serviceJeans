@@ -1,11 +1,9 @@
-import useAppContext from "../../context/useAppContext";
 import Button from "../../components/Button/Button";
 import "./Cart.scss";
-import "../../components/Button/Button.scss";
 
-export default function Cart() {
-  const { products } = useAppContext();
-
+export default function Cart({ products }) {
+  // const { products } = useAppContext();
+  console.log(products, "CART");
   return (
     <div id="Cart">
       <h1 className="cart__cart">Carrito</h1>

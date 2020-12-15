@@ -1,9 +1,7 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
 import ItemCounter from "../ItemCounter/ItemCounter";
-import "./ItemDetail.scss";
-// import Button from "../Button/Button";
 import useAppContext from "../../context/useAppContext";
+import "./ItemDetail.scss";
 
 export default function ItemDetail({ product }) {
   const [quantity, setQuantity] = useState(1);
@@ -16,7 +14,6 @@ export default function ItemDetail({ product }) {
 
   const addToCart = () => {
     addProduct(product, quantity);
-    // alert(`Se agrego ${quantity} items a tu carrito.`);
   };
 
   return (
@@ -39,12 +36,6 @@ export default function ItemDetail({ product }) {
           <button className="button__agregar" onClick={addToCart}>
             Añadir al carrito ({quantity})
           </button>
-          {/* <Button
-            classsName={"button__agregar"}
-            path={"/cart/"}
-            callback={addToCart}
-            content={"Comprar"}
-          /> */}
         </div>
       </div>
     </div>

@@ -2,13 +2,12 @@ import NavBar from "./components/NavBar/NavBar"; // SACARLO Y HACER MI NAVBAR
 import Home from "./containers/Home/Home";
 import ItemDetailContainer from "./containers/ItemDetailContainer/ItemDetailContainer";
 import CategoriesContainer from "./containers/CategoriesContainer/CategoriesContainer";
-
-import Cart from "./containers/Cart/Cart";
+import CategoriesDetailContainer from "./containers/CategoriesDetailContainer/CategoriesDetailContainer";
+import CartContainer from "./containers/CartContainer/CartContainer";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { AppProvider } from "./context/useAppContext";
 
 import "./App.scss";
-import CategoriesDetailContainer from "./containers/CategoriesDetailContainer/CategoriesDetailContainer";
 
 function App() {
   return (
@@ -33,7 +32,7 @@ function App() {
             </Route>
             {/* CheckOut */}
             <Route exact path="/cart/">
-              <Cart />
+              <CartContainer />
             </Route>
           </Switch>
         </BrowserRouter>
