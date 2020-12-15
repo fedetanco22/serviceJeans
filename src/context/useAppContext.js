@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import swal from "sweetalert";
 
 const AppContext = createContext();
 const useAppContext = () => useContext(AppContext); //Custum Hook para solo importar useAppContext y AppProvider
@@ -16,10 +17,9 @@ export const AppProvider = ({ children }) => {
     } else {
       setProducts([...products, { ...product, quantity }]);
     }
-
     swal(
       "Excelente!",
-      `Agregaste ${quantity} ${product.title} al carrito de compras!`,
+      `Agregaste ${quantity} ${product.title} al carrito de compras!`, ///Cambiar de lugar desp///
       "success"
     );
   };
