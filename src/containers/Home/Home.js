@@ -1,6 +1,4 @@
-// import {useState, useEffect} from 'react';
 import { useState, useEffect } from "react";
-// import { getFirestore } from "../../firebase";
 import ItemList from "../../components/ItemList/ItemList";
 
 import Spinner from "../../components/Spinner/Spinner";
