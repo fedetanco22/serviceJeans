@@ -30,8 +30,32 @@ export const AppProvider = ({ children }) => {
     return products.reduce((acc, product) => (acc += product.quantity), 0);
   };
 
+  // Delete Product from List
+  const deleteProduct = () => {
+    products.splice(0, 1);
+    setProducts([...products]);
+  };
+
+  // Add, Substract Quantity from Products
+  const addQuantity = (product, quantity) => {
+    product.quantity += quantity;
+    setProducts([...products]);
+  };
+  const substractQuantity = (product, quantity) => {
+    product.quantity += quantity;
+    setProducts([...products]);
+  };
+
   return (
-    <AppContext.Provider value={{ products, addProduct, productsQuantity }}>
+    <AppContext.Provider
+      value={{
+        products,
+        addProduct,
+        productsQuantity,
+        deleteProduct,
+        addQuantity,
+        substractQuantity,
+      }}>
       {children}
     </AppContext.Provider>
   );

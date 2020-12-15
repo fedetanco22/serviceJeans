@@ -12,7 +12,7 @@
 }
 
 .cart {
-    text-align: center;
+    // text-align: center;
 
     &__cart {
         font-size: 40px;
@@ -20,19 +20,29 @@
         text-align: center;
     }
 
+    &__titulos {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 15px;
+        border-bottom: 1px solid rgba(153, 153, 153, 0.295);
+
+        &__text {
+            text-align: center;
+        }
+    }
+
 
     &__detail {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         grid-template-areas:
-            "img titulo cantidad precio";
+            "img titulo cantidad precio eliminar";
         margin: 10px 0;
-
+        border-bottom: 1px solid rgba(153, 153, 153, 0.295);
     }
 
     &__img {
         grid-area: img;
-
 
         &-imagen {
             width: 30%;
@@ -62,5 +72,29 @@
         &::before {
             content: "$"
         }
+    }
+
+    &__eliminar {
+        grid-area: eliminar;
+        color: #999;
+        font-weight: 100;
+        margin-bottom: .5rem;
+        cursor: pointer;
+
+        &:hover {
+            color: red;
+        }
+    }
+
+    &__flechas {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #999;
+        font-size: 10px;
+        cursor: pointer;
+        margin-bottom: .5rem;
+        margin-left: 5px;
+
     }
 }

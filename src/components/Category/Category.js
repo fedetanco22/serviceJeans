@@ -5,7 +5,6 @@ import "./Category.scss";
 export default function Category({ category }) {
   return (
     <div id="Category" className="listCategory">
-      {/* <NavLink to={`/item/${category.id}`} className="listItem__link"> */}
       <img
         src={category.image}
         alt={`img-${category.id}`}
@@ -16,7 +15,6 @@ export default function Category({ category }) {
         content={category.description}
         className={"listCategory__button"}
       />
-      {/* </NavLink> */}
     </div>
   );
 }

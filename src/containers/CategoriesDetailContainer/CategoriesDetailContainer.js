@@ -1,5 +1,5 @@
 import CategoryDetail from "../../components/CategoryDetail/CategoryDetail";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import getProductsByCategory from "../../backend/itemCategory";
 import Spinner from "../../components/Spinner/Spinner";
