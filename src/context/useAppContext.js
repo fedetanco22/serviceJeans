@@ -5,72 +5,62 @@ const AppContext = createContext();
 const useAppContext = () => useContext(AppContext); //Custum Hook para solo importar useAppContext y AppProvider
 
 export const AppProvider = ({ children }) => {
-  const [products, setProducts] = useState([]);
+	const [products, setProducts] = useState([]);
+	const [contador, setContador] = useState(1);
+	// Add Product to Cart
+	const addProduct = (product, quantity) => {
+		const existingProduct = products.find((prod) => prod.id === product.id);
 
-  // Add Product to Cart
-  const addProduct = (product, quantity) => {
-    const existingProduct = products.find((prod) => prod.id === product.id);
+		if (existingProduct) {
+			existingProduct.quantity += quantity;
+			setProducts([...products]);
+		} else {
+			setProducts([...products, { ...product, quantity }]);
+		}
 
-    if (existingProduct) {
-      existingProduct.quantity += quantity;
-      setProducts([...products]);
-    } else {
-      setProducts([...products, { ...product, quantity }]);
-    }
+		swal(
+			"Excelente!",
+			`Agregaste ${quantity} ${product.title} al carrito de compras!`, ///Cambiar de lugar desp///
+			"success"
+		);
+	};
 
-    swal(
-      "Excelente!",
-      `Agregaste ${quantity} ${product.title} al carrito de compras!`, ///Cambiar de lugar desp///
-      "success"
-    );
-  };
+	//Total Quantity in Cart
+	const productsQuantity = () => {
+		return products.reduce((acc, product) => (acc += product.quantity), 0);
+	};
 
-  //Total Quantity in Cart
-  const productsQuantity = () => {
-    return products.reduce((acc, product) => (acc += product.quantity), 0);
-  };
+	// Delete Product from List
+	const deleteProduct = (id) => {
+		products.splice(
+			products.findIndex((product) => product.id === id),
+			1
+		);
+		setProducts([...products]);
+	};
 
-  // Delete Product from List
-  const deleteProduct = (id) => {
-    products.splice(
-      products.findIndex((product) => product.id === id),
-      1
-    );
-    setProducts([...products]);
-  };
+	// Add, Substract Quantity from Products w/ ID
 
-  // Add, Substract Quantity from Products w/ ID
-  const addQuantity = (product, quantity) => {
-    // product.quantity += quantity;
-    // setProducts([...products]);
-  };
-  const substractQuantity = (product, quantity) => {
-    product.quantity -= 1;
-    setProducts([...products]);
-  };
+	// Total $ Shopping Cart
+	const totalPrice = () => {
+		return products.reduce(
+			(acc, product) => (acc += product.quantity * product.price),
+			0
+		);
+	};
 
-  // Total $ Shopping Cart
-  const totalPrice = () => {
-    return products.reduce(
-      (acc, product) => (acc += product.quantity * product.price),
-      0
-    );
-  };
-
-  return (
-    <AppContext.Provider
-      value={{
-        products,
-        addProduct,
-        productsQuantity,
-        deleteProduct,
-        addQuantity,
-        substractQuantity,
-        totalPrice,
-      }}>
-      {children}
-    </AppContext.Provider>
-  );
+	return (
+		<AppContext.Provider
+			value={{
+				products,
+				addProduct,
+				productsQuantity,
+				deleteProduct,
+				totalPrice,
+			}}>
+			{children}
+		</AppContext.Provider>
+	);
 };
 
 export default useAppContext;

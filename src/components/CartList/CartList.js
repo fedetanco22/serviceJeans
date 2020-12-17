@@ -1,7 +1,10 @@
+import useAppContext from "../../context/useAppContext";
+
 import Cart from "../Cart/Cart";
 import "./CartList.scss";
 
 export default function CartList({ products }) {
+	const { totalPrice } = useAppContext();
 	return (
 		<div id='Cart'>
 			<div className='cart__titulos container'>
@@ -14,6 +17,9 @@ export default function CartList({ products }) {
 				{products.map((product, key) => (
 					<Cart key={key} product={product} />
 				))}
+			</div>
+			<div>
+				<h1>Total ${totalPrice()}</h1>
 			</div>
 		</div>
 	);
