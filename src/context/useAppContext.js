@@ -42,8 +42,16 @@ export const AppProvider = ({ children }) => {
     setProducts([...products]);
   };
   const substractQuantity = (product, quantity) => {
-    product.quantity += quantity;
+    product.quantity -= 1;
     setProducts([...products]);
+  };
+
+  // Total $ Shopping Cart
+  const totalPrice = () => {
+    return products.reduce(
+      (acc, product) => (acc += product.quantity * product.price),
+      0
+    );
   };
 
   return (
@@ -55,6 +63,7 @@ export const AppProvider = ({ children }) => {
         deleteProduct,
         addQuantity,
         substractQuantity,
+        totalPrice,
       }}>
       {children}
     </AppContext.Provider>

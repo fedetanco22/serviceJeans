@@ -7,10 +7,10 @@ export default function Cart({ product }) {
     deleteProduct();
   };
   const add = () => {
-    addQuantity();
+    addQuantity(product, product.quantity);
   };
   const substract = () => {
-    substractQuantity();
+    substractQuantity(product, product.quantity);
   };
 
   return (
