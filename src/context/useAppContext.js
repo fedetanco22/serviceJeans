@@ -31,15 +31,18 @@ export const AppProvider = ({ children }) => {
   };
 
   // Delete Product from List
-  const deleteProduct = () => {
-    products.splice(0, 1);
+  const deleteProduct = (id) => {
+    products.splice(
+      products.findIndex((product) => product.id === id),
+      1
+    );
     setProducts([...products]);
   };
 
-  // Add, Substract Quantity from Products
+  // Add, Substract Quantity from Products w/ ID
   const addQuantity = (product, quantity) => {
-    product.quantity += quantity;
-    setProducts([...products]);
+    // product.quantity += quantity;
+    // setProducts([...products]);
   };
   const substractQuantity = (product, quantity) => {
     product.quantity -= 1;

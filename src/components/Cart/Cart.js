@@ -3,13 +3,13 @@ import useAppContext from "../../context/useAppContext";
 export default function Cart({ product }) {
   const { deleteProduct, addQuantity, substractQuantity } = useAppContext();
 
-  const deleteItem = () => {
-    deleteProduct();
+  const deleteItem = (product) => {
+    deleteProduct(product.id);
   };
-  const add = () => {
+  const add = (product) => {
     addQuantity(product, product.quantity);
   };
-  const substract = () => {
+  const substract = (product) => {
     substractQuantity(product, product.quantity);
   };
 
@@ -41,7 +41,7 @@ export default function Cart({ product }) {
         <div className="cart__items">
           <i
             className="far fa-trash-alt cart__eliminar"
-            onClick={deleteItem}></i>
+            onClick={() => deleteItem(product)}></i>
         </div>
       </div>
     </div>
