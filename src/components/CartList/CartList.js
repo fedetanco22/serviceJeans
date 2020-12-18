@@ -5,6 +5,9 @@ import "./CartList.scss";
 
 export default function CartList({ products }) {
   const { totalPrice } = useAppContext();
+
+  const buyOrder = () => {};
+
   return (
     <div id="Cart">
       <div className="cart__titulos container">
@@ -21,7 +24,7 @@ export default function CartList({ products }) {
       <div>
         <h1>Total ${totalPrice()}</h1>
         <NavLink to="/checkout/">
-          <button className="button__agregar" /* onClick={addToCart} */>
+          <button className="button__agregar" onClick={buyOrder}>
             Comprar
           </button>
         </NavLink>
