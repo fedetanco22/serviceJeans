@@ -3,6 +3,7 @@ import Home from "./containers/Home/Home";
 import ItemDetailContainer from "./containers/ItemDetailContainer/ItemDetailContainer";
 import CategoriesContainer from "./containers/CategoriesContainer/CategoriesContainer";
 import CategoriesDetailContainer from "./containers/CategoriesDetailContainer/CategoriesDetailContainer";
+import CheckOutContainer from "./containers/CheckOutContainer/CheckOutContainer";
 import CartContainer from "./containers/CartContainer/CartContainer";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { AppProvider } from "./context/useAppContext";
@@ -30,9 +31,13 @@ function App() {
             <Route exact path="/categories/:categoryId">
               <CategoriesDetailContainer />
             </Route>
-            {/* CheckOut */}
+            {/* Cart */}
             <Route exact path="/cart/">
               <CartContainer />
+            </Route>
+            {/* CheckOut */}
+            <Route exact path="/comprar/">
+              <CheckOutContainer />
             </Route>
           </Switch>
         </BrowserRouter>
