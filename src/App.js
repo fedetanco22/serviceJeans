@@ -11,39 +11,39 @@ import { AppProvider } from "./context/useAppContext";
 import "./App.scss";
 
 function App() {
-  return (
-    <div className="App">
-      <AppProvider>
-        <BrowserRouter>
-          <NavBar />
-          <Switch>
-            <Route exact path="/">
-              <Home greeting="Últimos ingresos de Service Jeans!" />
-            </Route>
-            {/* Item Detail */}
-            <Route exact path="/item/:id">
-              <ItemDetailContainer />
-            </Route>
-            {/* Category Items */}
-            <Route exact path="/categories/">
-              <CategoriesContainer />
-            </Route>
-            <Route exact path="/categories/:categoryId">
-              <CategoriesDetailContainer />
-            </Route>
-            {/* Cart */}
-            <Route exact path="/cart/">
-              <CartContainer />
-            </Route>
-            {/* CheckOut */}
-            <Route exact path="/comprar/">
-              <CheckOutContainer />
-            </Route>
-          </Switch>
-        </BrowserRouter>
-      </AppProvider>
-    </div>
-  );
+	return (
+		<div className='App'>
+			<AppProvider>
+				<BrowserRouter>
+					<NavBar />
+					<Switch>
+						<Route exact path='/'>
+							<Home greeting='Últimos ingresos de Service Jeans!' />
+						</Route>
+						{/* Item Detail */}
+						<Route exact path='/item/:id'>
+							<ItemDetailContainer />
+						</Route>
+						{/* Category Items */}
+						<Route exact path='/categories/'>
+							<CategoriesContainer />
+						</Route>
+						<Route exact path='/categories/:categoryId'>
+							<CategoriesDetailContainer />
+						</Route>
+						{/* Cart */}
+						<Route exact path='/cart/'>
+							<CartContainer />
+						</Route>
+						{/* CheckOut */}
+						<Route exact path='/checkout/'>
+							<CheckOutContainer />
+						</Route>
+					</Switch>
+				</BrowserRouter>
+			</AppProvider>
+		</div>
+	);
 }
 
 export default App;

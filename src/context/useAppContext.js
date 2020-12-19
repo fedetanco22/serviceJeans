@@ -6,7 +6,7 @@ const useAppContext = () => useContext(AppContext); //Custum Hook para solo impo
 
 export const AppProvider = ({ children }) => {
 	const [products, setProducts] = useState([]);
-	const [contador, setContador] = useState(1);
+
 	// Add Product to Cart
 	const addProduct = (product, quantity) => {
 		const existingProduct = products.find((prod) => prod.id === product.id);
