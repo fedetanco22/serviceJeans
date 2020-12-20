@@ -20,7 +20,7 @@ export default function CartList({ products }) {
 				))}
 			</div>
 			<div>
-				<h1>Total ${totalPrice()}</h1>
+				<h5>Total ${totalPrice()}</h5>
 				<Button
 					path={"/checkout/"}
 					className={"button__agregar"}
