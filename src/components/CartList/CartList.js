@@ -1,10 +1,11 @@
 import useAppContext from "../../context/useAppContext";
-
 import Cart from "../Cart/Cart";
 import "./CartList.scss";
+import Button from "../Button/Button";
 
 export default function CartList({ products }) {
 	const { totalPrice } = useAppContext();
+
 	return (
 		<div id='Cart'>
 			<div className='cart__titulos container'>
@@ -19,7 +20,12 @@ export default function CartList({ products }) {
 				))}
 			</div>
 			<div>
-				<h1>Total ${totalPrice()}</h1>
+				<h5>Total ${totalPrice()}</h5>
+				<Button
+					path={"/checkout/"}
+					className={"button__agregar"}
+					content={"Comprar"}
+				/>
 			</div>
 		</div>
 	);
