@@ -8,7 +8,7 @@ export default function CheckOutContainer() {
 	const { products, totalPrice } = useAppContext();
 
 	const createOrder = () => {
-		addOrder();
+		addOrder(products, { name: "fede" }, totalPrice);
 	};
 	return (
 		<>
