@@ -1,66 +1,94 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import swal from "sweetalert";
+import firebase from "firebase";
 
 const AppContext = createContext();
 const useAppContext = () => useContext(AppContext); //Custum Hook para solo importar useAppContext y AppProvider
 
 export const AppProvider = ({ children }) => {
-	const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [isSignedIn, setIsSignedIn] = useState(false);
 
-	// Add Product to Cart
-	const addProduct = (product, quantity) => {
-		const existingProduct = products.find((prod) => prod.id === product.id);
+  const uiConfig = {
+    // Popup signin flow rather than redirect flow.
+    signInFlow: "popup",
+    // We will display Google and Facebook as auth providers.
+    signInOptions: [
+      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+      firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+      firebase.auth.EmailAuthProvider.PROVIDER_ID, // Other providers don't need to be given as object.
+    ],
+    callbacks: {
+      // Avoid redirects after sign-in.
+      signInSuccessWithAuthResult: () => false,
+    },
+  };
 
-		if (existingProduct) {
-			existingProduct.quantity += quantity;
-			setProducts([...products]);
-		} else {
-			setProducts([...products, { ...product, quantity }]);
-		}
+  useEffect(() => {
+    const unregisterAuthObserver = firebase
+      .auth()
+      .onAuthStateChanged((user) => {
+        setIsSignedIn(!!user);
+      });
+    return () => unregisterAuthObserver(); // Make sure we un-register Firebase observers when the component unmounts.
+  }, []);
 
-		swal(
-			"Excelente!",
-			`Agregaste ${quantity} ${product.title} al carrito de compras!`, ///Cambiar de lugar desp///
-			"success"
-		);
-	};
+  // Add Product to Cart
+  const addProduct = (product, quantity) => {
+    const existingProduct = products.find((prod) => prod.id === product.id);
 
-	//Total Quantity in Cart
-	const productsQuantity = () => {
-		return products.reduce((acc, product) => (acc += product.quantity), 0);
-	};
+    if (existingProduct) {
+      existingProduct.quantity += quantity;
+      setProducts([...products]);
+    } else {
+      setProducts([...products, { ...product, quantity }]);
+    }
 
-	// Delete Product from List
-	const deleteProduct = (id) => {
-		products.splice(
-			products.findIndex((product) => product.id === id),
-			1
-		);
-		setProducts([...products]);
-	};
+    swal(
+      "Excelente!",
+      `Agregaste ${quantity} ${product.title} al carrito de compras!`, ///Cambiar de lugar desp///
+      "success"
+    );
+  };
 
-	// Add, Substract Quantity from Products w/ ID
+  //Total Quantity in Cart
+  const productsQuantity = () => {
+    return products.reduce((acc, product) => (acc += product.quantity), 0);
+  };
 
-	// Total $ Shopping Cart
-	const totalPrice = () => {
-		return products.reduce(
-			(acc, product) => (acc += product.quantity * product.price),
-			0
-		);
-	};
+  // Delete Product from List
+  const deleteProduct = (id) => {
+    products.splice(
+      products.findIndex((product) => product.id === id),
+      1
+    );
+    setProducts([...products]);
+  };
 
-	return (
-		<AppContext.Provider
-			value={{
-				products,
-				addProduct,
-				productsQuantity,
-				deleteProduct,
-				totalPrice,
-			}}>
-			{children}
-		</AppContext.Provider>
-	);
+  // Add, Substract Quantity from Products w/ ID
+
+  // Total $ Shopping Cart
+  const totalPrice = () => {
+    return products.reduce(
+      (acc, product) => (acc += product.quantity * product.price),
+      0
+    );
+  };
+
+  return (
+    <AppContext.Provider
+      value={{
+        uiConfig,
+        isSignedIn,
+        products,
+        addProduct,
+        productsQuantity,
+        deleteProduct,
+        totalPrice,
+      }}>
+      {children}
+    </AppContext.Provider>
+  );
 };
 
 export default useAppContext;

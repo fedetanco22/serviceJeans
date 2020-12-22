@@ -1,6 +1,7 @@
 import CartIcon from "../CartIcon/CartIcon";
 import logo from "../../../src/assets/images/logo.jpg";
 import Button from "../Button/Button";
+import SignUp from "../SignUp/SignUp";
 
 import "./NavBar.scss";
 // import { NavLink } from "react-router-dom";
@@ -32,7 +33,7 @@ export default function NavBar() {
           })}
         </ul>
         <ul className="menu__list">
-          <CartIcon iconName="user" path="/" />
+          <SignUp />
           <CartIcon iconName="search" path="/" />
           <CartIcon iconName="shopping-bag" path="/cart/" />
         </ul>
