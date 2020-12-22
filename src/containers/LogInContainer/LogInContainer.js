@@ -20,7 +20,10 @@ export default function LogInContainer() {
   return (
     <div>
       <h1>My App</h1>
-      <p>Welcome ! You are now signed-in!</p>
+      <p>
+        Welcome {firebase.auth().currentUser.displayName}! You are now
+        signed-in!
+      </p>
       <a onClick={() => firebase.auth().signOut()}>Sign-out</a>
     </div>
   );

@@ -42,7 +42,10 @@ export default function CheckOutContainer() {
         </div>
       ) : (
         <div>
-          <h6 className="login__titulo">Bienvenido! Finalizá tu compra!</h6>
+          <h6 className="login__titulo">
+            Bienvenido {firebase.auth().currentUser.displayName}! Finalizá tu
+            compra!
+          </h6>
 
           <Button
             path={"/thankyou/"}
