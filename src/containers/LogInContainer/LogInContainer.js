@@ -3,7 +3,7 @@ import firebase from "firebase";
 import useAppContext from "../../context/useAppContext";
 
 export default function LogInContainer() {
-  const { uiConfig, isSignedIn } = useAppContext();
+  const { uiConfig, isSignedIn, user } = useAppContext();
 
   if (!isSignedIn) {
     return (

@@ -1,0 +1,29 @@
+.signup {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 4px;
+
+    &__user {
+        &__saludo {
+            font-size: 10px;
+            margin-bottom: 0rem;
+        }
+
+        &__name {
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 0rem;
+
+            &--a {
+                font-size: 14px;
+                text-decoration: none;
+                color: #333;
+
+                &:hover {
+                    color: pink;
+                }
+            }
+        }
+    }
+}

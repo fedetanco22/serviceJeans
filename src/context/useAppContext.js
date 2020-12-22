@@ -8,6 +8,7 @@ const useAppContext = () => useContext(AppContext); //Custum Hook para solo impo
 export const AppProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [isSignedIn, setIsSignedIn] = useState(false);
+  const [user, setUser] = useState(null);
 
   const uiConfig = {
     // Popup signin flow rather than redirect flow.
@@ -29,6 +30,7 @@ export const AppProvider = ({ children }) => {
       .auth()
       .onAuthStateChanged((user) => {
         setIsSignedIn(!!user);
+        setUser(user);
       });
     return () => unregisterAuthObserver(); // Make sure we un-register Firebase observers when the component unmounts.
   }, []);
@@ -80,6 +82,7 @@ export const AppProvider = ({ children }) => {
       value={{
         uiConfig,
         isSignedIn,
+        user,
         products,
         addProduct,
         productsQuantity,

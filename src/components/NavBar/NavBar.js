@@ -2,11 +2,9 @@ import CartIcon from "../CartIcon/CartIcon";
 import logo from "../../../src/assets/images/logo.jpg";
 import Button from "../Button/Button";
 import SignUp from "../SignUp/SignUp";
-import firebase from "firebase";
+// import firebase from "firebase";
 // import useAppContext from "../../context/useAppContext";
-
 import "./NavBar.scss";
-// import { NavLink } from "react-router-dom";
 
 const linkMenu = [
   { link: "productos", path: "/" },
@@ -35,8 +33,7 @@ export default function NavBar() {
           })}
         </ul>
         <ul className="menu__list">
-          {/* <SignUp name={firebase.auth().currentUser} /> */}
-          <CartIcon iconName="search" path="/" />
+          <SignUp />
           <CartIcon iconName="shopping-bag" path="/cart/" />
         </ul>
         {/* </Navbar.Collapse> */}{" "}

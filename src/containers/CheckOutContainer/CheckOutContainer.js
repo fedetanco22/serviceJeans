@@ -9,10 +9,10 @@ import firebase from "firebase";
 import "./CheckOutContainer.scss";
 
 export default function CheckOutContainer() {
-  const { products, totalPrice, uiConfig, isSignedIn } = useAppContext();
+  const { products, totalPrice, uiConfig, isSignedIn, user } = useAppContext();
 
   const createOrder = () => {
-    addOrder(products, { name: "fede" }, totalPrice);
+    addOrder(products, user, totalPrice);
   };
   return (
     <>
