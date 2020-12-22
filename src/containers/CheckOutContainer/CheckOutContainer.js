@@ -1,10 +1,12 @@
 import useAppContext from "../../context/useAppContext";
 import Button from "../../components/Button/Button";
 import CheckOutCart from "../../components/CheckOutCart/CheckOutCart";
-import Input from "../../components/Input/Input";
+// import Input from "../../components/Input/Input";
 import addOrder from "../../backend/addOrder";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import firebase from "firebase";
+
+import "./CheckOutContainer.scss";
 
 export default function CheckOutContainer() {
   const { products, totalPrice, uiConfig, isSignedIn } = useAppContext();
@@ -41,13 +43,15 @@ export default function CheckOutContainer() {
       ) : (
         <div>
           <h6 className="login__titulo">Bienvenido! Finalizá tu compra!</h6>
-          <a onClick={() => firebase.auth().signOut()}>Sign-out</a>
+
           <Button
             path={"/thankyou/"}
             className={"button__agregar"}
             content={"Finalizar Compra"}
             callback={createOrder}
           />
+
+          <a onClick={() => firebase.auth().signOut()}>Sign-out</a>
         </div>
       )}
     </>
