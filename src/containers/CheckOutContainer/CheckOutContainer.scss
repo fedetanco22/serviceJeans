@@ -1,4 +1,14 @@
-.login__titulo {
-    text-align: center;
-    font-weight: 600;
+.checkout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+
+    &__titulo {
+        text-align: center;
+
+        &--weight {
+            font-weight: 600;
+        }
+    }
 }

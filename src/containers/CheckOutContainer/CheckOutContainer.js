@@ -41,20 +41,21 @@ export default function CheckOutContainer() {
           />
         </div>
       ) : (
-        <div>
-          <h6 className="login__titulo">
-            Bienvenido {firebase.auth().currentUser.displayName}! Finalizá tu
-            compra!
+        <div className="checkout container">
+          <h6 className="checkout__titulo">
+            Bienvenido{" "}
+            <span className="checkout__titulo--weight">
+              {firebase.auth().currentUser.displayName}
+            </span>
+            ! Finalizá tu compra!
           </h6>
 
           <Button
-            path={"/thankyou/"}
+            path={"/order/"}
             className={"button__agregar"}
             content={"Finalizar Compra"}
             callback={createOrder}
           />
-
-          <a onClick={() => firebase.auth().signOut()}>Sign-out</a>
         </div>
       )}
     </>

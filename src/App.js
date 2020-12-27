@@ -6,6 +6,7 @@ import CategoriesDetailContainer from "./containers/CategoriesDetailContainer/Ca
 import CheckOutContainer from "./containers/CheckOutContainer/CheckOutContainer";
 import CartContainer from "./containers/CartContainer/CartContainer";
 import LogInContainer from "./containers/LogInContainer/LogInContainer";
+import FinalOrder from "./containers/FinalOrder/FinalOrder";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { AppProvider } from "./context/useAppContext";
 
@@ -43,6 +44,9 @@ function App() {
             {/* CheckOut */}
             <Route exact path="/checkout/">
               <CheckOutContainer />
+            </Route>
+            <Route exact path="/order/">
+              <FinalOrder />
             </Route>
           </Switch>
         </BrowserRouter>
