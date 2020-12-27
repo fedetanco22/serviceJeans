@@ -29,13 +29,13 @@ export default function LogInContainer() {
           {firebase.auth().currentUser.displayName}
         </span>{" "}
         ! Acabas de iniciar sesión en SERVICE JEANS!
+        <NavLink to="/cart/"> Ir a mi carrito</NavLink>
       </p>
       <Button
         path="/"
         content="Comprar"
         className="button__agregar login__btn"
       />
-
       <NavLink to="/login" onClick={() => firebase.auth().signOut()}>
         Cerrar sesión
       </NavLink>

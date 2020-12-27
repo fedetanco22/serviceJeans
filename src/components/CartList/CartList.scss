@@ -97,4 +97,15 @@
         margin-left: 5px;
 
     }
+
+    &__buyTotal {
+        text-align: center;
+
+        &__title {
+            &--bold {
+                font-size: larger;
+                font-weight: 600;
+            }
+        }
+    }
 }
