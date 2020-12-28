@@ -1,10 +1,11 @@
 import Item from "../Item/Item";
 import Button from "../Button/Button";
+import "./CategoryDetail.scss";
 
 export default function CategoryDetail({ products, category }) {
   return (
-    <div id="itemList" className="itemList">
-      <h1> {category}</h1>
+    <div id="CategoryDetail" className="category container">
+      <h1 className="category__title "> {category}</h1>
       {products ? (
         products.map((product, index) => {
           return <Item item={product} key={index} />;

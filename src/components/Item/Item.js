@@ -2,6 +2,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Item.scss";
 import useAppContext from "../../context/useAppContext";
+import SvgIcon from "@material-ui/core/Icon";
 
 export default function Item({ item }) {
   const [quantity] = useState(1);
@@ -24,9 +25,15 @@ export default function Item({ item }) {
           <p className="listItem__descrip__precio">$ {item.price}</p>
         </div>
       </NavLink>
-      <i
+      <SvgIcon
         className="listItem__descrip__plusIcon fas fa-plus-circle"
-        onClick={addItem}></i>
+        color="secondary"
+        onClick={addItem}
+      />
+
+      {/* <i
+        className="listItem__descrip__plusIcon fas fa-plus-circle"
+        ></i> */}
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import CartIcon from "../CartIcon/CartIcon";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import useAppContext from "../../context/useAppContext";
 import "./SignUp.scss";
 import { NavLink } from "react-router-dom";
@@ -17,7 +17,9 @@ export default function SignUp() {
           Iniciar Sesión
         </NavLink>
       )}
-      <CartIcon iconName="user" path="/login/" />
+      <NavLink to="/login/">
+        <AccountCircleIcon className="icons" />
+      </NavLink>
     </div>
   );
 }

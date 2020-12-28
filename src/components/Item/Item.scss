@@ -13,14 +13,21 @@
 
         &__titulo {
             margin-bottom: 2px;
+            color: #333;
+            font-size: 20px;
+            text-transform: capitalize;
         }
 
+        &__precio {
+            margin-bottom: 2px;
+            color: #333;
+            font-weight: bold;
+        }
 
         &__plusIcon {
             display: inline-block;
             font-size: 25px;
-            color: #777;
-            transform: translate(210px, -50px);
+            transform: translate(210px, -40px);
             cursor: pointer;
         }
     }
