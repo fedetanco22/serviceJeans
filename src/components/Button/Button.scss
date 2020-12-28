@@ -33,3 +33,12 @@
 
     }
 }
+
+.swal-button {
+    background-color: #f50057;
+
+}
+
+.swal-button:not([disabled]):hover {
+    background-color: #f5005679;
+}

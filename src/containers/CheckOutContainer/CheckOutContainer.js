@@ -5,6 +5,7 @@ import addOrder from "../../backend/addOrder";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import firebase from "firebase";
 import "./CheckOutContainer.scss";
+import PaymentForm from "../../components/PaymentForm/PaymentForm";
 
 export default function CheckOutContainer() {
   const { products, totalPrice, uiConfig, isSignedIn, user } = useAppContext();
@@ -21,8 +22,6 @@ export default function CheckOutContainer() {
           <CheckOutCart key={product.id} product={product} />
         ))}
       </div>
-      {/* component formulario */}
-
       {/* Button comprar que genere mi Order, con un on click db.firestore.add() */}
       <div className="cart__items">
         <h5 className="cart__items__title">
@@ -52,13 +51,14 @@ export default function CheckOutContainer() {
             ! Finalizá tu compra!
           </h6>
           {/* Formulario de pago */}
-
-          <Button
+          {/* component formulario */}
+          <PaymentForm callback={createOrder} />
+          {/* <Button
             path={"/order/"}
             className={"button__agregar"}
             content={"Finalizar Compra"}
-            callback={createOrder}
-          />
+            
+          /> */}
         </div>
       )}
     </div>
