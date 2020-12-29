@@ -1,12 +1,12 @@
 import "./FormPayment.scss";
 import useForm from "../useForm/useForm";
+import validate from "../../FormValidation/FormValidation";
 
 export default function FormPayment({ submitForm }) {
   const { handleChange, handleSubmit, values, errors } = useForm(
     submitForm,
-    // validate
+    validate
   );
-  console.log("🚀 ", values);
 
   return (
     <div>
@@ -24,7 +24,7 @@ export default function FormPayment({ submitForm }) {
           value={values.name}
           onChange={handleChange}
         />
-        {errors.cardName && <p>{errors.cardName}</p>}
+        {errors.name && <p>{errors.name}</p>}
         <input
           type="text"
           name="number"
@@ -35,7 +35,7 @@ export default function FormPayment({ submitForm }) {
           value={values.number}
           onChange={handleChange}
         />
-        {errors.cardNumber && <p>{errors.cardNumber}</p>}
+        {errors.number && <p>{errors.number}</p>}
         <div>
           <input
             type="text"
@@ -57,7 +57,7 @@ export default function FormPayment({ submitForm }) {
             value={values.month}
             onChange={handleChange}
           />
-          {errors.date && <p>{errors.date}</p>}
+          {errors.month && <p>{errors.month}</p>}
           <input
             type="select"
             name="year"
@@ -67,7 +67,7 @@ export default function FormPayment({ submitForm }) {
             value={values.year}
             onChange={handleChange}
           />
-          {errors.date && <p>{errors.date}</p>}
+          {errors.year && <p>{errors.year}</p>}
         </div>
         <input
           type="submit"

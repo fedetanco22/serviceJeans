@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function Form(callback /* validate */) {
+export default function Form(callback, validate) {
   const [values, setValues] = useState({
     name: "",
     number: "",
@@ -22,7 +22,7 @@ export default function Form(callback /* validate */) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    /* // setErrors(validate(values)); */
+    setErrors(validate(values));
     setIsSubmitting(true);
   };
 
