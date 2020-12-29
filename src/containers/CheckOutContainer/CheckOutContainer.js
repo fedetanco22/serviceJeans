@@ -5,13 +5,13 @@ import addOrder from "../../backend/addOrder";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import firebase from "firebase";
 import "./CheckOutContainer.scss";
-import PaymentForm from "../../components/PaymentForm/PaymentForm";
+import Form from "../../components/FormPayment/FormPayment";
 
 export default function CheckOutContainer() {
   const { products, totalPrice, uiConfig, isSignedIn, user } = useAppContext();
 
-  const createOrder = () => {
-    addOrder(products, user, totalPrice);
+  const createOrder = (products, user, totalPrice) => {
+    addOrder(products, user, totalPrice, payment);
   };
   return (
     <div id="CheckOut" className="checkout">
@@ -52,7 +52,7 @@ export default function CheckOutContainer() {
           </h6>
           {/* Formulario de pago */}
           {/* component formulario */}
-          <PaymentForm callback={createOrder} />
+          <Form callback={createOrder} />
           {/* <Button
             path={"/order/"}
             className={"button__agregar"}
