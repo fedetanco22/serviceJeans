@@ -11,7 +11,7 @@ export default function CheckOutContainer() {
   const { products, totalPrice, uiConfig, isSignedIn, user } = useAppContext();
 
   const createOrder = (products, user, totalPrice) => {
-    addOrder(products, user, totalPrice, payment);
+    addOrder(products, user, totalPrice);
   };
   return (
     <div id="CheckOut" className="checkout">
