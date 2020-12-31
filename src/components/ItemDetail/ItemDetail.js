@@ -29,10 +29,7 @@ export default function ItemDetail({ product }) {
             <p className="item__titulo">{product.title} </p>
             <p className="item__precio">{product.price} </p>
           </div>
-          <ItemCounter
-            initialValue={1}
-            maxValue={15}
-            onAdd={handleCounter}></ItemCounter>
+          <ItemCounter initialValue={1} maxValue={15} onAdd={handleCounter} />
           <button className="button__agregar" onClick={addToCart}>
             Añadir al carrito ({quantity})
           </button>

@@ -1,9 +1,8 @@
 import { getFirestore } from "./firebase/index";
 
-export default function addOrder(cart, user, totalPrice) {
+export default function addOrder(user, cart, totalPrice) {
   let newOrder = {
     buyer: {
-      name: user.displayName,
       name: user.displayName,
     },
     items: cart,

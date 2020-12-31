@@ -7,13 +7,11 @@ export default function FormPayment({ submitForm }) {
     submitForm,
     validate
   );
-  console.log(values.month, "/", values.year);
+
   return (
-    <div>
-      <h1>Pago con Tarjeta de Credito</h1>
-      <form
-        className="container d-flex flex-column align-items-center form"
-        onSubmit={handleSubmit}>
+    <>
+      <h1 className="checkout__titulo">Pago con Tarjeta de Credito</h1>
+      <form className="container form form__container" onSubmit={handleSubmit}>
         <input
           type="text"
           name="name"
@@ -24,7 +22,7 @@ export default function FormPayment({ submitForm }) {
           value={values.name}
           onChange={handleChange}
         />
-        {errors.name && <p>{errors.name}</p>}
+        {errors.name && <p className="form__errors">{errors.name}</p>}
         <input
           type="text"
           name="number"
@@ -35,50 +33,53 @@ export default function FormPayment({ submitForm }) {
           value={values.number}
           onChange={handleChange}
         />
-        {errors.number && <p>{errors.number}</p>}
-        <div>
-          <input
-            type="text"
-            name="cvv"
-            placeholder="CVV"
-            maxLength="3"
-            className="form__input"
-            value={values.cvv}
-            onChange={handleChange}
-          />
-          {errors.cvv && <p>{errors.cvv}</p>}
-          <div>
+        {errors.number && <p className="form__errors">{errors.number}</p>}
+        <div className="form__container--small">
+          <div className="form__input__small">
             <input
-              type="select"
-              name="month"
-              placeholder="Mes"
-              maxLength="2"
-              className="form__input"
-              value={values.month}
+              type="text"
+              name="cvv"
+              placeholder="CVV"
+              maxLength="3"
+              className="form__input form__input--small"
+              value={values.cvv}
               onChange={handleChange}
             />
-            {errors.month && <p>{errors.month}</p>}
-            {errors.fecha && <p>{errors.fecha}</p>}
+            {errors.cvv && <p className="form__errors">{errors.cvv}</p>}
+          </div>
+          <div className="form__input--small">
+            <div className="form__input__small ">
+              <input
+                type="select"
+                name="month"
+                placeholder="Mes"
+                maxLength="2"
+                className="form__input form__input--date"
+                value={values.month}
+                onChange={handleChange}
+              />
+              {errors.month && <p className="form__errors">{errors.month}</p>}
+              {errors.fecha && <p className="form__errors">{errors.fecha}</p>}
+            </div>
             <p> / </p>
-            <input
-              type="select"
-              name="year"
-              placeholder="Año"
-              maxLength="2"
-              className="form__input"
-              value={values.year}
-              onChange={handleChange}
-            />
-            {errors.year && <p>{errors.year}</p>}
+            <div className="form__input__small">
+              <input
+                type="select"
+                name="year"
+                placeholder="Año"
+                maxLength="2"
+                className="form__input form__input--date"
+                value={values.year}
+                onChange={handleChange}
+              />
+              {errors.year && <p className="form__errors">{errors.year}</p>}
+            </div>
           </div>
         </div>
-        <input
-          type="submit"
-          value="Finalizar compra "
-          className="button__agregar"
-          // onSubmit={handleSubmit}
-        />
+        <button type="submit" className="button__agregar">
+          Finalizar compra
+        </button>
       </form>
-    </div>
+    </>
   );
 }

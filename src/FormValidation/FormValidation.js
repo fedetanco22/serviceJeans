@@ -5,8 +5,6 @@ export default function FormValidation(values) {
   const monthInserted = parseInt(Number(values.month));
   const yearInserted = parseInt(Number(values.year));
 
-  console.log("date hoy ", mes + "/" + year);
-
   if (!values.name.trim()) {
     errors.name = "Insertar el Titular de la tarjeta";
   } else if (!/^[A-Za-z]+/.test(values.name.trim())) {
@@ -43,10 +41,11 @@ export default function FormValidation(values) {
   if (monthInserted <= 0 || monthInserted > 12) {
     errors.month = "Mes inválido";
   }
-  if (mes >= monthInserted || year >= yearInserted) {
-    errors.fecha = "Fecha inválida";
+  if (mes >= monthInserted) {
+    if (year >= yearInserted) {
+      errors.fecha = "Fecha inválida";
+    }
   }
-
   return errors;
 }
 

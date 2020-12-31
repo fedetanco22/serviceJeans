@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
+import addOrder from "../../backend/addOrder";
+import useAppContext from "../../context/useAppContext";
 
 export default function Form(callback, validate) {
+  const { products, totalPrice, user } = useAppContext();
+
   const [values, setValues] = useState({
     name: "",
     number: "",
@@ -28,7 +32,7 @@ export default function Form(callback, validate) {
 
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
-      callback();
+      addOrder(user, products, totalPrice);
     }
   }, [errors]);
 
