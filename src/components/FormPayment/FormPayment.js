@@ -76,6 +76,7 @@ export default function FormPayment({ submitForm }) {
             </div>
           </div>
         </div>
+
         <button type="submit" className="button__agregar">
           Finalizar compra
         </button>

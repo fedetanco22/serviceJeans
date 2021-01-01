@@ -31,21 +31,22 @@ export default function FormValidation(values) {
     errors.month = "Inserte Mes";
   } else if (!/^\d{2,2}$/.test(values.month.trim())) {
     errors.month = "Mes inválido";
+  } else if (monthInserted <= 0 || monthInserted > 12) {
+    errors.month = "Mes inválido";
   }
 
   if (!values.year.trim()) {
     errors.year = "Inserte Año";
   } else if (!/^\d{2,2}$/.test(values.year.trim())) {
     errors.year = "Año inválido";
+  } else if (year > yearInserted) {
+    errors.year = "Año inválido";
   }
-  if (monthInserted <= 0 || monthInserted > 12) {
-    errors.month = "Mes inválido";
+
+  if (year === yearInserted && mes > monthInserted) {
+    errors.fecha = "Fecha inválida";
   }
-  if (mes >= monthInserted) {
-    if (year >= yearInserted) {
-      errors.fecha = "Fecha inválida";
-    }
-  }
+
   return errors;
 }
 

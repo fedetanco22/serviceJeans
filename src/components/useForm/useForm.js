@@ -4,14 +4,13 @@ import useAppContext from "../../context/useAppContext";
 
 export default function Form(callback, validate) {
   const { products, totalPrice, user } = useAppContext();
-
   const [values, setValues] = useState({
     name: "",
     number: "",
     month: "",
     year: "",
     cvv: "",
-    cardType: "💳",
+    // cardType: "💳",
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -33,8 +32,9 @@ export default function Form(callback, validate) {
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
       addOrder(user, products, totalPrice);
+      callback();
     }
-  }, [errors]);
+  }, [errors, isSubmitting]);
 
   return { handleChange, handleSubmit, values, errors };
 }

@@ -5,9 +5,14 @@ import FormSuccess from "../FormSuccess/FormSuccess";
 
 export default function Form() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  console.log("🚀 ~ file: Form.js ~ line 8 ~ Form ~ isSubmitted", isSubmitted);
 
   const submitForm = () => {
     setIsSubmitted(true);
+    console.log(
+      "🚀 ~ file: Form.js ~ line 12 ~ submitForm ~ IsSubmitted",
+      IsSubmitted
+    );
   };
 
   return (
