@@ -33,6 +33,7 @@ export default function Form(callback, validate) {
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
       addOrder(user, products, totalPrice);
+      callback();
     }
   }, [errors]);
 
