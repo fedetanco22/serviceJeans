@@ -30,10 +30,6 @@ export default function Item({ item }) {
         color="secondary"
         onClick={addItem}
       />
-
-      {/* <i
-        className="listItem__descrip__plusIcon fas fa-plus-circle"
-        ></i> */}
     </div>
   );
 }

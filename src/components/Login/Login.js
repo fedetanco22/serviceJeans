@@ -1,13 +1,8 @@
-// import { useState } from "react";
 import useAppContext from "../../context/useAppContext";
-// import CheckOutCart from "../../components/CheckOutCart/CheckOutCart";
-// import addOrder from "../../backend/addOrder";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import firebase from "firebase";
 import "../../containers/CheckOutContainer/CheckOutContainer.scss";
-// import Form from "../../components/FormPayment/FormPayment";
 import FormPayment from "../../components/FormPayment/FormPayment";
-// import FormSuccess from "../../components/FormSuccess/FormSuccess";
 
 export default function Login({ submitForm }) {
   const { uiConfig, isSignedIn } = useAppContext();
