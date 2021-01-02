@@ -1,26 +1,23 @@
-// import { getFirestore } from "./firebase/index";
-// import getOrder from "./getOrderById";
+import { getFirestore } from "./firebase/index";
 
-// export default function addOrders(user, cart, totalPrice) {
-//   let newOrder = {
-//     buyer: {
-//       name: user.displayName,
-//       email: user.email,
-//     },
-//     items: cart,
-//     date: new Date(),
-//     total: totalPrice(),
-//   };
-//   return newOrder;
-
-// const query = getFirestore();
-// query.collection("orders").add(newOrder);
-// // .then(({ id }) => {
-//   getOrder(id);
-// })
-// .catch((err) => {
-//   console.log(err);
-// });
-
-// return newOrder;
-// }
+export const addOrderAndGetId = (products, user, totalPrice) => {
+  let newOrder = {
+    buyer: {
+      name: user.displayName,
+      email: user.email,
+    },
+    items: products,
+    date: new Date(),
+    total: totalPrice(),
+  };
+  return new Promise((resolve, reject) => {
+    getFirestore()
+      .collection("orders")
+      .add(newOrder)
+      .then((response) => {
+        if (response.size === 0) reject("Empty");
+        const data = response.id;
+        resolve(data);
+      });
+  });
+};

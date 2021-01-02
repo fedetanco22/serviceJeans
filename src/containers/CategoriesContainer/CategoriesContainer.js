@@ -9,8 +9,6 @@ export default function CategoriesContainer() {
   const [loading, setLoading] = useState(true);
   const [category, setCategory] = useState([]);
 
-  // const { categoryId } = useParams();
-
   useEffect(() => {
     setTimeout(() => {
       getCategory().then((result) => {

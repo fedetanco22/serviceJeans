@@ -1,17 +1,32 @@
 import { useEffect, useState } from "react";
-import addOrders from "../../backend/addOrder";
+import { addOrderAndGetId } from "../../backend/addOrder";
+import useAppContext from "../../context/useAppContext";
+
 import Spinner from "../Spinner/Spinner";
-// import { getFirestore } from "../../backend/firebase/index";
-// import useForm from "../useForm/useForm";
 
 export default function FormSuccess() {
+  const { products, totalPrice, user } = useAppContext();
   const [loading, setLoading] = useState(true);
-  // const [orderId, setOrderId] = useState();
+  const [orderId, setOrderId] = useState();
 
   useEffect(() => {
-    setTimeout(() => {}, 1000);
-    setLoading(false); // aca recibimos los resultados por eso sacamos el loading
-  }, []);
+    setTimeout(() => {
+      addOrderAndGetId(products, user, totalPrice).then((result) => {
+        setOrderId(result);
+        setLoading(false);
+      });
+    }, 2000);
+  }, [products, user, totalPrice]);
 
-  return <div>{loading ? <Spinner /> : <h1>Tu numero de Compra es: </h1>}</div>;
+  return (
+    <div id="OrderId">
+      {loading ? (
+        <Spinner />
+      ) : (
+        <div className="">
+          <h1>Tu numero de Compra es: {orderId}</h1>
+        </div>
+      )}
+    </div>
+  );
 }
