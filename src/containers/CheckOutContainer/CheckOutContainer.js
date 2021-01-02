@@ -13,9 +13,11 @@ import Login from "../../components/Login/Login";
 export default function CheckOutContainer() {
   const { products, totalPrice } = useAppContext();
   const [isSubmitted, setIsSubmitted] = useState(false);
+  console.log(isSubmitted);
 
   const submitForm = () => {
     setIsSubmitted(true);
+    console.log(isSubmitted);
   };
   // const createOrder = (products, user, totalPrice) => {
   //   addOrder(products, user, totalPrice);

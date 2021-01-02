@@ -1,6 +1,6 @@
-import { useState } from "react";
+// import { useState } from "react";
 import useAppContext from "../../context/useAppContext";
-import CheckOutCart from "../../components/CheckOutCart/CheckOutCart";
+// import CheckOutCart from "../../components/CheckOutCart/CheckOutCart";
 // import addOrder from "../../backend/addOrder";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import firebase from "firebase";
