@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import addOrder from "../../backend/addOrder";
 import useAppContext from "../../context/useAppContext";
 
-export default function Form(callback, validate) {
+export default function Form(submitForm, validate) {
   const { products, totalPrice, user } = useAppContext();
   const [values, setValues] = useState({
     name: "",
@@ -32,7 +32,8 @@ export default function Form(callback, validate) {
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
       addOrder(user, products, totalPrice);
-      callback();
+
+      submitForm();
     }
   }, [errors, isSubmitting]);
 
