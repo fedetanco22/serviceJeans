@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Proyecto Final para CoderHouse con React.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Creado con [Create React App](https://github.com/facebook/create-react-app).
+
+E-commerce para Service Jeans 
 
 ## Available Scripts
 
