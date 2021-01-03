@@ -15,31 +15,33 @@ export default function CheckOutContainer() {
 
   return (
     <div id="CheckOut" className="checkout container">
-      {!isSubmitted ? (
-        <>
-          <div className="checkout__sections checkout__sections--detalle ">
-            <h1 className="checkout__titulo">Detalle de compra</h1>
-            {/* Detalle de compra- products q recibo de context */}
-            <div>
-              {products.map((product) => (
-                <CheckOutCart key={product.id} product={product} />
-              ))}
+      <div className="checkout__container">
+        {!isSubmitted ? (
+          <>
+            <div className="checkout__sections checkout__sections--detalle ">
+              <h1 className="checkout__titulo">Detalle de compra</h1>
+              {/* Detalle de compra- products q recibo de context */}
+              <div>
+                {products.map((product) => (
+                  <CheckOutCart key={product.id} product={product} />
+                ))}
+              </div>
+              {/* Button comprar que genere mi Order, con un on click db.firestore.add() */}
+              <div className="cart__items">
+                <h5 className="cart__items__title">
+                  Total{" "}
+                  <span className="cart__buyTotal__title--bold">
+                    ${totalPrice()}
+                  </span>
+                </h5>
+              </div>
             </div>
-            {/* Button comprar que genere mi Order, con un on click db.firestore.add() */}
-            <div className="cart__items">
-              <h5 className="cart__items__title">
-                Total{" "}
-                <span className="cart__buyTotal__title--bold">
-                  ${totalPrice()}
-                </span>
-              </h5>
-            </div>
-          </div>
-          <Login submitForm={submitForm} />
-        </>
-      ) : (
-        <FormSuccess />
-      )}
+            <Login submitForm={submitForm} />
+          </>
+        ) : (
+          <FormSuccess />
+        )}
+      </div>
     </div>
   );
 }

@@ -1,11 +1,20 @@
 .checkout {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-top: 50px;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    // margin-top: 50px;
     height: 80vh;
-    padding-bottom: 100px;
+
+    &__container {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        // margin-top: 50px;
+        // height: 100vh;
+    }
+
 
     &__sections {
         display: flex;
