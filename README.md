@@ -10,6 +10,8 @@ Hooks.\
 Context Api.\
 Firebase Firestore.\
 Firebase Auth/Login.\
+FirebaseUI.\
+Firebase Hosting.\
 Dynamic Categories.\
 Cart Persistent.\
 Order Id with Firestore.\
