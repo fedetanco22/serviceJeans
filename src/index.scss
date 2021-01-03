@@ -92,6 +92,11 @@ a {
 
 a:hover {
   text-decoration: none;
+  color: #fff;
+}
+
+a:-webkit-any-link {
+  color: none;
 }
 
 /**

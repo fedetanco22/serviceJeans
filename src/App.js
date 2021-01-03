@@ -9,6 +9,7 @@ import LogInContainer from "./containers/LogInContainer/LogInContainer";
 import Footer from "./components/Footer/Footer";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { AppProvider } from "./context/useAppContext";
+import WhatsApp from "./components/WhatsApp/WhatsApp";
 
 import "./App.scss";
 
@@ -49,6 +50,7 @@ function App() {
               <FormuSucess />
             </Route> */}
           </Switch>
+          <WhatsApp />
           <Footer />
         </BrowserRouter>
       </AppProvider>

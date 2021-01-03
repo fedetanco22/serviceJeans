@@ -8,6 +8,10 @@
         &__saludo {
             font-size: 10px;
             margin-bottom: 0rem;
+
+            &--active {
+                color: #fff;
+            }
         }
 
         &__name {
@@ -15,10 +19,15 @@
             font-weight: 600;
             margin-bottom: 0rem;
 
+            &--active {
+                color: #fff;
+            }
+
             &--a {
                 font-size: 14px;
                 text-decoration: none;
                 color: #333;
+
 
                 &:hover {
                     color: pink;

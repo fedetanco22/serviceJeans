@@ -1,10 +1,9 @@
 import CartIcon from "../CartIcon/CartIcon";
-import logo from "../../../src/assets/images/logo.jpg";
+// import logo from "../../../src/assets/images/logo.jpg";
 import Button from "../Button/Button";
 import SignUp from "../SignUp/SignUp";
-// import firebase from "firebase";
-// import useAppContext from "../../context/useAppContext";
 import "./NavBar.scss";
+import { useState } from "react";
 
 const linkMenu = [
   { link: "productos", path: "/" },
@@ -14,12 +13,22 @@ const linkMenu = [
 ];
 
 export default function NavBar() {
+  const [navbar, setNavbar] = useState(false);
+
+  const changeBackground = () => {
+    if (window.scrollY >= 80) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  };
+  window.addEventListener("scroll", changeBackground);
+
   return (
-    <div
-      id="Navbar"
-      className=" bg-white align-items-center justify-content-between">
+    <div id="Navbar" className={navbar ? "navbar navbar__active" : "navbar"}>
       <nav className="container menu">
-        <Button path="/" content={logo} className="logo" />
+        <h2 className={navbar ? "logo logo--active" : "logo"}>SERVICE</h2>
+        {/* <Button path="/" content={logo} c /> */}
         <ul className="menu__list">
           {linkMenu.map(({ link, path }, key) => {
             return (
@@ -27,14 +36,27 @@ export default function NavBar() {
                 path={path}
                 content={link}
                 key={key}
-                className="menu__items hvr-underline-from-center"
+                className={
+                  navbar
+                    ? "menu__items menu__items--active hvr-underline-from-center"
+                    : "menu__items hvr-underline-from-center"
+                }
               />
             );
           })}
         </ul>
         <ul className="menu__list">
-          <SignUp />
-          <CartIcon iconName="shopping-bag" path="/cart/" />
+          <SignUp
+            saludoActive={navbar ? "signup__user__saludo--active" : ""}
+            nameActive={navbar ? "signup__user__name--active" : ""}
+            iconActive={navbar ? "icons--active" : ""}
+          />
+          <CartIcon
+            iconName="shopping-bag"
+            path="/cart/"
+            numberActive={navbar ? "shopCart__number--active" : ""}
+            iconActive={navbar ? "icons--active" : ""}
+          />
         </ul>
         {/* </Navbar.Collapse> */}{" "}
       </nav>

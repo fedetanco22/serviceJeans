@@ -1,3 +1,16 @@
+.navbar {
+    background-color: #fff;
+    position: fixed;
+    width: 100%;
+    z-index: 20;
+    top: 0;
+    left: 0;
+
+    &__active {
+        background-color: #333;
+    }
+}
+
 .menu {
     display: flex;
     align-items: center;
@@ -19,14 +32,25 @@
         margin: 0 25px;
         text-transform: uppercase;
         border: none;
-        background-color: #fff;
+        background-color: rgba(255, 255, 255, 0);
 
+        &--active {
+            color: #fff;
+        }
     }
 }
 
 .logo {
     width: 150px;
+    font-size: 45px;
+    font-weight: 900;
+
+    &--active {
+        color: #fff;
+    }
 }
+
+
 
 /* Underline From Center */
 .hvr-underline-from-center {

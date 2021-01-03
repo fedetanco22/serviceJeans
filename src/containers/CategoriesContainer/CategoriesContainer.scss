@@ -1,9 +1,19 @@
-#CategoryContainer {
+.categorias {
 
+    height: 100vh;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    margin: 50px;
+    justify-content: center;
 
+
+
+    &__container {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 50px;
+
+    }
 }

@@ -1,6 +1,6 @@
 .listCategory {
-    width: 500px;
-    height: 600px;
+    width: 250px;
+    height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,7 +15,7 @@
     }
 
     &__button {
-        transform: translate(-50%, -500%);
+        transform: translate(-50%, -300%);
         position: absolute;
         border: none;
         width: 150px;

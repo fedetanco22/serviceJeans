@@ -26,7 +26,7 @@ export default function CategoriesContainer() {
           <Spinner />
         </div>
       ) : (
-        <div id="CategoryContainer" className="categoryContainer">
+        <div id="CategoryContainer" className="categorias">
           <CategoryList categories={category} />
         </div>
       )}
