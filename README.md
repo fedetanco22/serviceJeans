@@ -16,6 +16,10 @@ Dynamic Categories.\
 Cart Persistent.\
 Order Id with Firestore.\
 
+## Credit Card Vaslidation w/RegExp.\
+
+To simulate use card number that begins w/ 4 (VISA) o 5 (MasterCard).\
+
 
 ## Available Scripts
 
