@@ -31,7 +31,7 @@ export default function Form(submitForm, validate) {
     if (Object.keys(errors).length === 0 && isSubmitting) {
       submitForm();
     }
-  }, [errors, isSubmitting]);
+  }, [errors, isSubmitting, submitForm]);
 
   return { handleChange, handleSubmit, values, errors };
 }

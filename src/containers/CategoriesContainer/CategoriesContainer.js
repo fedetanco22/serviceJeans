@@ -20,8 +20,16 @@ export default function CategoriesContainer() {
   }, []);
 
   return (
-    <div id="CategoryContainer">
-      {loading ? <Spinner /> : <CategoryList categories={category} />}
-    </div>
+    <>
+      {loading ? (
+        <div className="home">
+          <Spinner />
+        </div>
+      ) : (
+        <div id="CategoryContainer" className="categoryContainer">
+          <CategoryList categories={category} />
+        </div>
+      )}
+    </>
   );
 }

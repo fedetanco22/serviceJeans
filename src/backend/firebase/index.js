@@ -1,5 +1,10 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
+import "firebase/auth"; // for authentication
+import "firebase/storage"; // for storage
+import "firebase/database"; // for realtime databas
+import "firebase/messaging"; // for cloud messaging
+import "firebase/functions"; // for cloud functions
 
 const app = firebase.initializeApp({
   apiKey: "AIzaSyDIZeF6V_HpxqSea3e16CGIzMyQTzwsjVw",

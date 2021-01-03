@@ -1,12 +1,13 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import swal from "sweetalert";
-import firebase from "firebase";
+import firebase from "firebase/app";
+import { useLocalStorage } from "../components/useLocalStorage/useLocalStorage";
 
 const AppContext = createContext();
 const useAppContext = () => useContext(AppContext); //Custum Hook para solo importar useAppContext y AppProvider
 
 export const AppProvider = ({ children }) => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useLocalStorage("products", []);
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [user, setUser] = useState(null);
 
@@ -67,14 +68,17 @@ export const AppProvider = ({ children }) => {
     setProducts([...products]);
   };
 
-  // Add, Substract Quantity from Products w/ ID
-
   // Total $ Shopping Cart
   const totalPrice = () => {
     return products.reduce(
       (acc, product) => (acc += product.quantity * product.price),
       0
     );
+  };
+
+  const emptyCart = () => {
+    products.splice(0, products.length);
+    return setProducts([...products]);
   };
 
   return (
@@ -88,6 +92,7 @@ export const AppProvider = ({ children }) => {
         productsQuantity,
         deleteProduct,
         totalPrice,
+        emptyCart,
       }}>
       {children}
     </AppContext.Provider>

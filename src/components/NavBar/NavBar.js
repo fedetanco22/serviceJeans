@@ -8,9 +8,9 @@ import "./NavBar.scss";
 
 const linkMenu = [
   { link: "productos", path: "/" },
-  { link: "colecciones", path: "/" },
+  // { link: "colecciones", path: "/" },
   { link: "categorías", path: "/categories/" },
-  { link: "venta mayorista", path: "/" },
+  // { link: "venta mayorista", path: "/" },
 ];
 
 export default function NavBar() {

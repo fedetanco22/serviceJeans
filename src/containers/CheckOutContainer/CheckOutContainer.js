@@ -12,9 +12,7 @@ export default function CheckOutContainer() {
   const submitForm = () => {
     setIsSubmitted(true);
   };
-  // const createOrder = (products, user, totalPrice) => {
-  //   addOrder(products, user, totalPrice);
-  // };
+
   return (
     <div id="CheckOut" className="checkout container">
       {!isSubmitted ? (

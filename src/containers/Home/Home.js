@@ -23,7 +23,9 @@ export default function Home({ greeting }) {
   return (
     <>
       {loading ? (
-        <Spinner />
+        <div id="Home" className="home">
+          <Spinner />
+        </div>
       ) : (
         <main>
           <section className="banner">

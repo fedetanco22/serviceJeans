@@ -6,6 +6,7 @@ import CategoriesDetailContainer from "./containers/CategoriesDetailContainer/Ca
 import CheckOutContainer from "./containers/CheckOutContainer/CheckOutContainer";
 import CartContainer from "./containers/CartContainer/CartContainer";
 import LogInContainer from "./containers/LogInContainer/LogInContainer";
+import Footer from "./components/Footer/Footer";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { AppProvider } from "./context/useAppContext";
 
@@ -48,6 +49,7 @@ function App() {
               <FormuSucess />
             </Route> */}
           </Switch>
+          <Footer />
         </BrowserRouter>
       </AppProvider>
     </div>

@@ -6,13 +6,12 @@ import Button from "../../components/Button/Button";
 import "./LoginContainer.scss";
 
 export default function LogInContainer() {
-  const { uiConfig, isSignedIn, user } = useAppContext();
+  const { uiConfig, isSignedIn } = useAppContext();
 
   if (!isSignedIn) {
     return (
-      <div>
-        {/* <h1>My App</h1>
-        <p>Please sign-in:</p> */}
+      <div className="login container">
+        <p>Porfavor inicia sesión:</p>
         <StyledFirebaseAuth
           uiConfig={uiConfig}
           firebaseAuth={firebase.auth()}
