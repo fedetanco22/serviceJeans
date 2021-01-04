@@ -17,7 +17,7 @@ export default function ItemDetail({ product }) {
   };
 
   return (
-    <div id="Detail" className="container">
+    <div id="Detail" className="container ">
       <div className="item text-center m-3 mt-5 ">
         <img
           className="item__img"

@@ -20,7 +20,7 @@ export default function ItemDetailContainer() {
   }, [id]);
 
   return (
-    <div id="Item">
+    <div id="Item" className="detailContainer">
       {loading ? <Spinner /> : <ItemDetail product={product} />}
     </div>
   );
