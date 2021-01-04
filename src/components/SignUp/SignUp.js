@@ -15,7 +15,7 @@ export default function SignUp({ saludoActive, nameActive, iconActive }) {
           </p>
         </div>
       ) : (
-        <NavLink to="/login/" className=" signup__user__name--a ">
+        <NavLink to="/login/" className={`signup__user__name--a ${nameActive}`}>
           Iniciar Sesión
         </NavLink>
       )}

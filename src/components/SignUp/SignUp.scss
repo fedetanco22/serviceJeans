@@ -19,9 +19,7 @@
             font-weight: 600;
             margin-bottom: 0rem;
 
-            &--active {
-                color: #fff;
-            }
+
 
             &--a {
                 font-size: 14px;
@@ -32,6 +30,10 @@
                 &:hover {
                     color: pink;
                 }
+            }
+
+            &--active {
+                color: #fff;
             }
         }
     }
