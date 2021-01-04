@@ -27,8 +27,11 @@ export default function NavBar() {
   return (
     <div id="Navbar" className={navbar ? "navbar navbar__active" : "navbar"}>
       <nav className="container menu">
-        <h2 className={navbar ? "logo logo--active" : "logo"}>SERVICE</h2>
-        {/* <Button path="/" content={logo} c /> */}
+        <Button
+          path="/"
+          content="SERVICE "
+          className={navbar ? "logo logo--active" : "logo"}
+        />
         <ul className="menu__list">
           {linkMenu.map(({ link, path }, key) => {
             return (

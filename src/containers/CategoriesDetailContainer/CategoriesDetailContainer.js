@@ -20,12 +20,12 @@ export default function CategoriesDetailContainer() {
   }, [categoryId]);
 
   return (
-    <>
+    <div className="category">
       {loading ? (
         <Spinner />
       ) : (
         <CategoryDetail products={products} category={categoryId} />
       )}
-    </>
+    </div>
   );
 }

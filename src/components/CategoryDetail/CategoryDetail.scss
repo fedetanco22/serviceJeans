@@ -1,9 +1,10 @@
 .category {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     margin-top: 50px;
+    height: 80vh;
 
     &__title {
         margin-bottom: 50px;
