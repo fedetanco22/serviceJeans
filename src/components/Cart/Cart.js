@@ -4,26 +4,27 @@ import useAppContext from "../../context/useAppContext";
 
 export default function Cart({ product }) {
   const [contador, setContador] = useState(product.quantity);
-  const { deleteProduct } = useAppContext();
+  const { deleteProduct, handleQuantity } = useAppContext();
 
   const deleteItem = (product) => {
     deleteProduct(product.id);
   };
+
   const addToCounter = () => {
     if (contador < 10) {
       setContador((prevContador) => {
         let contador = prevContador + 1;
-
+        handleQuantity(product, contador);
         return contador;
       });
     }
   };
 
   const substractCounter = () => {
-    if (contador > 0) {
+    if (contador > 1) {
       setContador((prevContador) => {
         let contador = prevContador - 1;
-
+        handleQuantity(product, contador);
         return contador;
       });
     }

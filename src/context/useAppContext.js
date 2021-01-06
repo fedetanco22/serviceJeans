@@ -54,6 +54,15 @@ export const AppProvider = ({ children }) => {
     );
   };
 
+  const handleQuantity = (product, quantity) => {
+    const existingProduct = products.find((prod) => prod.id === product.id);
+
+    if (existingProduct) {
+      existingProduct.quantity = quantity;
+      setProducts([...products]);
+    }
+  };
+
   //Total Quantity in Cart
   const productsQuantity = () => {
     return products.reduce((acc, product) => (acc += product.quantity), 0);
@@ -89,6 +98,7 @@ export const AppProvider = ({ children }) => {
         user,
         products,
         addProduct,
+        handleQuantity,
         productsQuantity,
         deleteProduct,
         totalPrice,
