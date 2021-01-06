@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useAppContext from "../../context/useAppContext";
 
 export default function CartCounter({ inicialValue, product }) {
-  const [contador, setContador] = useState(inicialValue);
+  const [contador, setContador] = useState(0);
   const { handleQuantity } = useAppContext();
 
   const addToCounter = () => {
@@ -24,6 +24,11 @@ export default function CartCounter({ inicialValue, product }) {
       });
     }
   };
+
+  useEffect(() => {
+    setContador(inicialValue);
+  }, [inicialValue]);
+
   return (
     <>
       <h6 className="cart__cantidad"> {contador} </h6>

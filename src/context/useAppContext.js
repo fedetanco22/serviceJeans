@@ -57,7 +57,6 @@ export const AppProvider = ({ children }) => {
   const handleQuantity = (product, quantity) => {
     product.quantity = quantity;
     setProducts([...products]);
-    console.log("mnisil", products);
   };
 
   //Total Quantity in Cart
