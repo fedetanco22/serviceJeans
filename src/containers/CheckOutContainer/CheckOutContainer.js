@@ -19,7 +19,7 @@ export default function CheckOutContainer() {
         {!isSubmitted ? (
           <>
             <div className="checkout__sections checkout__sections--detalle ">
-              <h1 className="checkout__titulo">Detalle de compra</h1>
+              <h1 className="checkout__titulosPpales">Detalle de compra</h1>
               {/* Detalle de compra- products q recibo de context */}
               <div>
                 {products.map((product) => (

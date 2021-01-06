@@ -10,7 +10,9 @@ export default function FormPayment({ submitForm }) {
 
   return (
     <>
-      <h1 className="checkout__titulo">Pago con Tarjeta de Credito</h1>
+      <h2 className="checkout__titulosPpales--tarjeta">
+        Pago con Tarjeta de Credito
+      </h2>
       <form className="container form form__container" onSubmit={handleSubmit}>
         <input
           type="text"

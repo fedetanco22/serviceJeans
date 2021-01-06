@@ -11,6 +11,7 @@
         flex-flow: row wrap;
         justify-content: space-between;
         align-items: flex-start;
+        padding: 5px;
         // margin-top: 50px;
         // height: 100vh;
     }
@@ -26,10 +27,22 @@
 
         &--pago,
         &--login {
-
             max-width: 500px;
         }
 
+    }
+
+    &__titulosPpales {
+        margin: 0px 0px 20px;
+        font-size: 40px;
+        font-weight: 900;
+        text-align: center;
+
+        &--tarjeta {
+            @extend .checkout__titulosPpales;
+            font-size: 30px;
+
+        }
     }
 
     &__titulo {
@@ -41,34 +54,3 @@
         }
     }
 }
-
-// .nocheckout__login__titulo {
-//     text-align: center;
-//     margin-top: 20px;
-// }
-
-// @media (min-width: 576px) {
-//     .checkout {
-//         display: flex;
-//         flex-flow: column wrap;
-//         // width: 100%;
-
-//         &__sections {
-//             display: flex;
-//             flex-direction: column;
-// width: 100%;
-
-// &--detalle {
-//     width: 100%;
-// }
-
-// &--pago,
-// &--login {
-
-//     max-width: 500px;
-// // }
-
-// }
-
-// }
-// }

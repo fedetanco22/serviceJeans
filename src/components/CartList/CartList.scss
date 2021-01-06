@@ -17,13 +17,14 @@
 
     &__cart {
         font-size: 40px;
-        font-weight: 400;
+        font-weight: 900;
         text-align: center;
     }
 
     &__titulos {
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-areas: "img titulo cantidad precio eliminar";
         padding: 0 15px;
         border-bottom: 1px solid rgba(153, 153, 153, 0.295);
 
