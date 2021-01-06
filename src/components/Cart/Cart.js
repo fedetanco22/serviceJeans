@@ -1,33 +1,11 @@
-import { useState } from "react";
-
 import useAppContext from "../../context/useAppContext";
+import CartCounter from "../CartCounter/CartCounter";
 
 export default function Cart({ product }) {
-  const [contador, setContador] = useState(product.quantity);
-  const { deleteProduct, handleQuantity } = useAppContext();
+  const { deleteProduct } = useAppContext();
 
-  const deleteItem = (product) => {
-    deleteProduct(product.id);
-  };
-
-  const addToCounter = () => {
-    if (contador < 10) {
-      setContador((prevContador) => {
-        let contador = prevContador + 1;
-        handleQuantity(product, contador);
-        return contador;
-      });
-    }
-  };
-
-  const substractCounter = () => {
-    if (contador > 1) {
-      setContador((prevContador) => {
-        let contador = prevContador - 1;
-        handleQuantity(product, contador);
-        return contador;
-      });
-    }
+  const deleteItem = (id) => {
+    deleteProduct(id);
   };
 
   return (
@@ -44,15 +22,7 @@ export default function Cart({ product }) {
           <h5 className="cart__item"> {product.title} </h5>
         </div>
         <div className="cart__items">
-          <h6 className="cart__cantidad"> {contador} </h6>
-          <div className="cart__flechas">
-            <i
-              className="fas fa-chevron-up cart__flechas--up"
-              onClick={addToCounter}></i>
-            <i
-              className="fas fa-chevron-down cart__flechas--down"
-              onClick={substractCounter}></i>
-          </div>
+          <CartCounter inicialValue={product.quantity} product={product} />
         </div>
         <div className="cart__items">
           <h6 className="cart__precio"> {product.price} </h6>
@@ -60,7 +30,7 @@ export default function Cart({ product }) {
         <div className="cart__items">
           <i
             className="far fa-trash-alt cart__eliminar"
-            onClick={() => deleteItem(product)}></i>
+            onClick={() => deleteItem(product.id)}></i>
         </div>
       </div>
     </div>

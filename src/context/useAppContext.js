@@ -55,12 +55,9 @@ export const AppProvider = ({ children }) => {
   };
 
   const handleQuantity = (product, quantity) => {
-    const existingProduct = products.find((prod) => prod.id === product.id);
-
-    if (existingProduct) {
-      existingProduct.quantity = quantity;
-      setProducts([...products]);
-    }
+    product.quantity = quantity;
+    setProducts([...products]);
+    console.log("mnisil", products);
   };
 
   //Total Quantity in Cart
