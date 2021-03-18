@@ -1,9 +1,8 @@
+import { useState } from "react";
 import CartIcon from "../CartIcon/CartIcon";
-// import logo from "../../../src/assets/images/logo.jpg";
 import Button from "../Button/Button";
 import SignUp from "../SignUp/SignUp";
 import "./NavBar.scss";
-import { useState } from "react";
 
 const linkMenu = [
   { link: "productos", path: "/" },

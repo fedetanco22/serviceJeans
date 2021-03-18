@@ -15,7 +15,6 @@ export default function ItemDetail({ product }) {
   const addToCart = () => {
     addProduct(product, quantity);
   };
-  
 
   return (
     <div id="Detail" className="container ">

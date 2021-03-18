@@ -7,6 +7,8 @@ import CheckOutContainer from "./containers/CheckOutContainer/CheckOutContainer"
 import CartContainer from "./containers/CartContainer/CartContainer";
 import LogInContainer from "./containers/LogInContainer/LogInContainer";
 import Footer from "./components/Footer/Footer";
+import ScrollToTop from "./components/ScrollToTop";
+import Error404 from "./components/Error404/Error404";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { AppProvider } from "./context/useAppContext";
 import WhatsApp from "./components/WhatsApp/WhatsApp";
@@ -18,6 +20,7 @@ function App() {
     <div className="App">
       <AppProvider>
         <BrowserRouter>
+          <ScrollToTop />
           <NavBar />
           <Switch>
             <Route exact path="/">
@@ -49,7 +52,9 @@ function App() {
             {/* <Route exact path="/order/">
               <FormuSucess />
             </Route> */}
+            <Route component={Error404} />
           </Switch>
+
           <WhatsApp />
           <Footer />
         </BrowserRouter>
